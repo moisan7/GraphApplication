@@ -86,11 +86,11 @@ list<CVertex*> QuickHullRec(CVertex* vertex_A, CVertex* vertex_B, list<CVertex*>
 		auto hull_A = QuickHullRec(vertex_A, farthest_point, segment_A.first, flag);
 		designated_half_Hull_list.insert(designated_half_Hull_list.end(), hull_A.begin(), hull_A.end());
 
-		auto hull_B = QuickHullRec(farthest_point, vertex_B, segment_A.second, flag);
+		auto hull_B = QuickHullRec(farthest_point, vertex_B, segment_B.first, flag);
 		designated_half_Hull_list.insert(designated_half_Hull_list.end(), hull_B.begin(), hull_B.end());
 	}
 	else if (flag == 'S') {
-		auto hull_A = QuickHullRec(vertex_A, farthest_point, segment_B.first, flag);
+		auto hull_A = QuickHullRec(vertex_A, farthest_point, segment_A.second, flag);
 		designated_half_Hull_list.insert(designated_half_Hull_list.end(), hull_A.begin(), hull_A.end());
 
 		auto hull_B = QuickHullRec(farthest_point, vertex_B, segment_B.second, flag);
@@ -116,6 +116,11 @@ CConvexHull QuickHull(CGraph& g) {
 	}
 	if (g.GetNVertices() < 3) {
 		Hull.m_Vertices.push_back(g.GetVertex(0));
+		if (g.GetNVertices() == 2 &&
+			(g.GetVertex(0)->m_Point.m_X != g.GetVertex(1)->m_Point.m_X ||
+			g.GetVertex(0)->m_Point.m_Y != g.GetVertex(1)->m_Point.m_Y)) {
+			Hull.m_Vertices.push_back(g.GetVertex(1));
+		}
 		return Hull;
 	}
 

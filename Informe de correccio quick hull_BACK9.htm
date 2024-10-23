@@ -27,7 +27,7 @@
 </ul>
 </div>
 <div class="derecha">
-<p style="margin-top: 25px;"><span>Data:</span>Wed Oct 23 19:45:49 2024
+<p style="margin-top: 25px;"><span>Data:</span>Wed Oct 23 19:19:36 2024
 </p>
 <p style="margin-top: 25px;"><span>Corrector:</span>QUICKHULL (QUICKHULL)</p>
 <h3>Autors:</h3>
@@ -37,7 +37,7 @@
 </div>
 </div>
 <div class="resultado">
-<p><span>Algorisme quick hull </span><span id="nota">3.5</span></p>
+<p><span>Algorisme quick hull </span><span id="nota">2.1</span></p>
 <script>
 const notas = document.querySelectorAll("#nota");
 notas.forEach(nota => {
@@ -95,8 +95,8 @@ elementos[i].hidden = !mostrar;
 <li class="elemento" data-propiedades="correcta  "><span class="tituloLista"><a href="#TEST_1">Prova Quick Hull Empty<span class = "descripcion">:</span></a></span><span class="correcto"> Correcte</span></li>
 <li class="elemento" data-propiedades="correcta  "><span class="tituloLista"><a href="#TEST_2">Prova Quick Hull One<span class = "descripcion">:</span></a></span><span class="correcto"> Correcte</span></li>
 <li class="elemento" data-propiedades="correcta  "><span class="tituloLista"><a href="#TEST_3">Prova Quick Hull superimposed<span class = "descripcion">:</span></a></span><span class="correcto"> Correcte</span></li>
-<li class="elemento" data-propiedades="correcta  "><span class="tituloLista"><a href="#TEST_4">Prova Quick Hull horizontal<span class = "descripcion">:</span></a></span><span class="correcto"> Correcte</span></li>
-<li class="elemento" data-propiedades="correcta  "><span class="tituloLista"><a href="#TEST_5">Prova Quick Hull vertical<span class = "descripcion">:</span></a></span><span class="correcto"> Correcte</span></li>
+<li class="elemento" data-propiedades="incorrecta  "><span class="tituloLista"><a href="#TEST_4">Prova Quick Hull horizontal<span class = "descripcion">:</span></a></span><span class="incorrecto"> Falla amb 1 errors</span></li>
+<li class="elemento" data-propiedades="incorrecta  "><span class="tituloLista"><a href="#TEST_5">Prova Quick Hull vertical<span class = "descripcion">:</span></a></span><span class="incorrecto"> Falla amb 1 errors</span></li>
 <li class="elemento" data-propiedades="incorrecta  "><span class="tituloLista"><a href="#TEST_6">Prova Quick Hull graf10<span class = "descripcion">:</span></a></span><span class="incorrecto"> Falla amb 5 errors</span></li>
 <li class="elemento" data-propiedades="incorrecta  "><span class="tituloLista"><a href="#TEST_7">Prova Quick Hull Graf50<span class = "descripcion">:</span></a></span><span class="incorrecto"> Falla amb 7 errors</span></li>
 <li class="elemento" data-propiedades="incorrecta  "><span class="tituloLista"><a href="#TEST_8">Prova Quick Hull graf100<span class = "descripcion">:</span></a></span><span class="incorrecto"> Falla amb 10 errors</span></li>
@@ -146,10 +146,10 @@ Leer vertices
 Leer Aristas
 Fin lectura
 
-TIEMPO DE EJECUCION: 0.000017
+TIEMPO DE EJECUCION: 0.000032
 FIN EJECUCION COMANDOS
 </pre>
-Temps de execució de la prova: 1.7e-05seg.</P>
+Temps de execució de la prova: 3.2e-05seg.</P>
 <P><b>CONVEX HULL OK:</b> []</P>
 <P><b>CONVEX HULL PRACTICA:</b> []</P>
 
@@ -208,16 +208,16 @@ Leer vertices
 Leer Aristas
 Fin lectura
 
-TIEMPO DE EJECUCION: 0.000002
+TIEMPO DE EJECUCION: 0.000001
 FIN EJECUCION COMANDOS
 </pre>
-Temps de execució de la prova: 2e-06seg.</P>
+Temps de execució de la prova: 1e-06seg.</P>
 <P><b>CONVEX HULL OK:</b> [V0001]</P>
 <P><b>CONVEX HULL PRACTICA:</b> [V0001]</P>
 
  <b>CORRECTE</b>
 </div>
-<div class="test elemento" data-propiedades="correcta ">
+<div class="test elemento" data-propiedades="incorrecta ">
 <hr>
 <a name="TEST_4">
 <h3>Prova Quick Hull horizontal</h3>
@@ -244,11 +244,16 @@ FIN EJECUCION COMANDOS
 </pre>
 Temps de execució de la prova: 1e-06seg.</P>
 <P><b>CONVEX HULL OK:</b> [V0002, V0001]</P>
-<P><b>CONVEX HULL PRACTICA:</b> [V0001, V0002]</P>
+<P><b>CONVEX HULL PRACTICA:</b> [V0001]</P>
+Vertex que falta: VERTEX(V0002,(350, 400))
+<b style="color: red; ">Falla amb 1 errors</b>
+<ul>
+<li>Vertex que falta a l'envoltant convexa mínima V0002
+<dd>
 
- <b>CORRECTE</b>
-</div>
-<div class="test elemento" data-propiedades="correcta ">
+</dd>
+</ul><br></div>
+<div class="test elemento" data-propiedades="incorrecta ">
 <hr>
 <a name="TEST_5">
 <h3>Prova Quick Hull vertical</h3>
@@ -275,10 +280,15 @@ FIN EJECUCION COMANDOS
 </pre>
 Temps de execució de la prova: 1e-06seg.</P>
 <P><b>CONVEX HULL OK:</b> [V0002, V0001]</P>
-<P><b>CONVEX HULL PRACTICA:</b> [V0001, V0002]</P>
+<P><b>CONVEX HULL PRACTICA:</b> [V0001]</P>
+Vertex que falta: VERTEX(V0002,(350, 400))
+<b style="color: red; ">Falla amb 1 errors</b>
+<ul>
+<li>Vertex que falta a l'envoltant convexa mínima V0002
+<dd>
 
- <b>CORRECTE</b>
-</div>
+</dd>
+</ul><br></div>
 <div class="test elemento" data-propiedades="incorrecta ">
 <hr>
 <a name="TEST_6">
@@ -301,10 +311,10 @@ Leer vertices
 Leer Aristas
 Fin lectura
 
-TIEMPO DE EJECUCION: 0.000090
+TIEMPO DE EJECUCION: 0.000050
 FIN EJECUCION COMANDOS
 </pre>
-Temps de execució de la prova: 9e-05seg.</P>
+Temps de execució de la prova: 5e-05seg.</P>
 <P><b>CONVEX HULL OK:</b> [V0007, V0002, V0005, V0009, V0010, V0006]</P>
 <P><b>CONVEX HULL PRACTICA:</b> [V0007, V0005, V0002, V0010, V0006, V0009]</P>
 DIFERENCIAS DE ORDEN: VERTEX(V0002,(9319.62, 14908.7))!=VERTEX(V0005,(15155.7, 2257.39)) VERTEX(V0005,(15155.7, 2257.39))!=VERTEX(V0002,(9319.62, 14908.7)) VERTEX(V0009,(10824.1, 235.847))!=VERTEX(V0010,(3921.02, 3725.7)) VERTEX(V0010,(3921.02, 3725.7))!=VERTEX(V0006,(1310.1, 6523.64)) VERTEX(V0006,(1310.1, 6523.64))!=VERTEX(V0009,(10824.1, 235.847))
@@ -353,10 +363,10 @@ Leer vertices
 Leer Aristas
 Fin lectura
 
-TIEMPO DE EJECUCION: 0.000148
+TIEMPO DE EJECUCION: 0.000130
 FIN EJECUCION COMANDOS
 </pre>
-Temps de execució de la prova: 0.000148seg.</P>
+Temps de execució de la prova: 0.00013seg.</P>
 <P><b>CONVEX HULL OK:</b> [V0008, V0002, V0029, V0024, V0006, V0026, V0020, V0025, V0018]</P>
 <P><b>CONVEX HULL PRACTICA:</b> [V0008, V0024, V0002, V0029, V0006, V0025, V0018, V0020, V0026]</P>
 DIFERENCIAS DE ORDEN: VERTEX(V0002,(98.1475, 15622.1))!=VERTEX(V0024,(15997.6, 15235.8)) VERTEX(V0029,(3178.81, 15957.5))!=VERTEX(V0002,(98.1475, 15622.1)) VERTEX(V0024,(15997.6, 15235.8))!=VERTEX(V0029,(3178.81, 15957.5)) VERTEX(V0026,(13509.7, 426.771))!=VERTEX(V0025,(752.953, 1411.66)) VERTEX(V0020,(3836.54, 705.1))!=VERTEX(V0018,(203.131, 4366.34)) VERTEX(V0025,(752.953, 1411.66))!=VERTEX(V0020,(3836.54, 705.1)) VERTEX(V0018,(203.131, 4366.34))!=VERTEX(V0026,(13509.7, 426.771))
@@ -485,10 +495,10 @@ Leer vertices
 Leer Aristas
 Fin lectura
 
-TIEMPO DE EJECUCION: 0.002007
+TIEMPO DE EJECUCION: 0.002105
 FIN EJECUCION COMANDOS
 </pre>
-Temps de execució de la prova: 0.002007seg.</P>
+Temps de execució de la prova: 0.002105seg.</P>
 <P><b>CONVEX HULL OK:</b> [V0041, V0761, V0029, V0428, V0107, V0225, V0704, V0217, V0078, V0690, V0711, V0444, V0366, V0463, V0135, V0648, V0006, V0497, V0267, V0373, V0558, V0840]</P>
 <P><b>CONVEX HULL PRACTICA:</b> [V0041, V0444, V0107, V0029, V0761, V0428, V0078, V0704, V0225, V0217, V0711, V0690, V0648, V0267, V0373, V0558, V0840, V0497, V0006, V0463, V0135, V0366]</P>
 DIFERENCIAS DE ORDEN: VERTEX(V0761,(20.0201, 11889.5))!=VERTEX(V0444,(15996.6, 8701.93)) VERTEX(V0029,(45.4115, 14548.8))!=VERTEX(V0107,(1137.24, 15971.7)) VERTEX(V0428,(357.433, 15354))!=VERTEX(V0029,(45.4115, 14548.8)) VERTEX(V0107,(1137.24, 15971.7))!=VERTEX(V0761,(20.0201, 11889.5)) VERTEX(V0225,(7879.63, 15994.1))!=VERTEX(V0428,(357.433, 15354)) VERTEX(V0704,(12698.1, 15996.6))!=VERTEX(V0078,(15829.1, 15760.2)) VERTEX(V0217,(14257.3, 15954.6))!=VERTEX(V0704,(12698.1, 15996.6)) VERTEX(V0078,(15829.1, 15760.2))!=VERTEX(V0225,(7879.63, 15994.1)) VERTEX(V0690,(15897.5, 15495.6))!=VERTEX(V0217,(14257.3, 15954.6)) VERTEX(V0444,(15996.6, 8701.93))!=VERTEX(V0690,(15897.5, 15495.6)) VERTEX(V0366,(15941.4, 1675.34))!=VERTEX(V0648,(15238.7, 0.488296)) VERTEX(V0463,(15905.3, 1061.56))!=VERTEX(V0267,(791.528, 99.1241)) VERTEX(V0135,(15564, 496.597))!=VERTEX(V0373,(229.499, 381.359)) VERTEX(V0648,(15238.7, 0.488296))!=VERTEX(V0558,(129.887, 1652.39)) VERTEX(V0006,(5928.4, 0.976592))!=VERTEX(V0840,(15.6255, 4296.03)) VERTEX(V0267,(791.528, 99.1241))!=VERTEX(V0006,(5928.4, 0.976592)) VERTEX(V0373,(229.499, 381.359))!=VERTEX(V0463,(15905.3, 1061.56)) VERTEX(V0558,(129.887, 1652.39))!=VERTEX(V0135,(15564, 496.597)) VERTEX(V0840,(15.6255, 4296.03))!=VERTEX(V0366,(15941.4, 1675.34))
@@ -593,10 +603,10 @@ Leer vertices
 Leer Aristas
 Fin lectura
 
-TIEMPO DE EJECUCION: 0.021894
+TIEMPO DE EJECUCION: 0.020408
 FIN EJECUCION COMANDOS
 </pre>
-Temps de execució de la prova: 0.021894seg.</P>
+Temps de execució de la prova: 0.020408seg.</P>
 <P><b>CONVEX HULL OK:</b> [V0859, V9717, V1371, V6219, V8976, V8558, V9933]</P>
 <P><b>CONVEX HULL PRACTICA:</b> [V0859, V8976, V1371, V9717, V6219, V8558, V9933]</P>
 DIFERENCIAS DE ORDEN: VERTEX(V9717,(2317.46, 20133.7))!=VERTEX(V8976,(22787.7, -3253.12)) VERTEX(V6219,(20020.5, 15620.8))!=VERTEX(V9717,(2317.46, 20133.7)) VERTEX(V8976,(22787.7, -3253.12))!=VERTEX(V6219,(20020.5, 15620.8))
