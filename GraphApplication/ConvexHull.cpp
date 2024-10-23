@@ -18,14 +18,14 @@ double find_distance_between_vertices(CVertex* v1, CVertex* v2, CVertex* v3) {
 
 // Divide the vertices of the graph in two segments based on 
 // a line from vertex_A to vertex_B
-pair<list<CVertex*>, list<CVertex*>> create_segment(CVertex* vertex_A, CVertex* vertex_B, 
+pair<list<CVertex*>, list<CVertex*>> create_segment(CVertex* vertex_A, CVertex* vertex_B,
 	list<CVertex*> vertices) {
 	// We prepare the lists for both segments of vertices
 	list<CVertex*> above;
 	list<CVertex*> below;
 
 	// If the line isn't vertical, the vertex group can be split
-	if (vertex_B->m_Point.m_X - vertex_B->m_Point.m_X == 0) {
+	if (vertex_B->m_Point.m_X - vertex_A->m_Point.m_X == 0) {
 		// Return the pair of lists, above and below segments EMPTY
 		return pair<list<CVertex*>, list<CVertex*>>(above, below);
 	}
@@ -47,23 +47,55 @@ pair<list<CVertex*>, list<CVertex*>> create_segment(CVertex* vertex_A, CVertex* 
 	}
 
 	// Return the pair of lists, above and below segments
-	return pair<list<CVertex*>, list<CVertex*>>(above, below);
+	return pair<list<CVertex*>, list<CVertex*>>(above, below); // first = above, second = below
 }
 
 // Recursive function of the QuickHull Agorythm
-list<CVertex*> QuickHullRec(CVertex* vertex_A, CVertex* vertex_B, list<CVertex>* segment, char flag) {
+list<CVertex*> QuickHullRec(CVertex* vertex_A, CVertex* vertex_B, list<CVertex*> segment, char flag) {
 	// Prepare the list
 	list<CVertex*> designated_half_Hull_list;
 
 	// Exit case for the recursion
-	if (segment->empty() || vertex_A || vertex_B) {
+	if (segment.empty() || !vertex_A || !vertex_B) {
 		// Return half of the Hull
 		return designated_half_Hull_list;
-
 	}
 
 	// Calculate the distance of every point from the line to find the farthest point
+	double farthest_distance = numeric_limits<double>::min();
+	CVertex* farthest_point = nullptr;
+	for (CVertex* vertex : segment) {
+		double distance = find_distance_between_vertices(vertex_A, vertex_B, vertex);
+		if (distance > farthest_distance) {
+			farthest_distance = distance;
+			farthest_point = vertex;
+		}
+	}
+	designated_half_Hull_list.push_back(farthest_point);
 
+	// Point is now in the convex hull so remove it from the segment
+	segment.remove(farthest_point);
+
+	// Determine the segments formed two lines vA-farthest_point and vB-farthest_point
+	// first = above, second = below
+	auto segment_A = create_segment(vertex_A, farthest_point, segment);
+	auto segment_B = create_segment(vertex_B, farthest_point, segment);
+
+	// Only use the segments in the same direction, the opposite direction is contained in the convex hull
+	if (flag == 'N') {
+		auto hull_A = QuickHullRec(vertex_A, farthest_point, segment_A.first, flag);
+		designated_half_Hull_list.insert(designated_half_Hull_list.end(), hull_A.begin(), hull_A.end());
+
+		auto hull_B = QuickHullRec(farthest_point, vertex_B, segment_A.second, flag);
+		designated_half_Hull_list.insert(designated_half_Hull_list.end(), hull_B.begin(), hull_B.end());
+	}
+	else if (flag == 'S') {
+		auto hull_A = QuickHullRec(vertex_A, farthest_point, segment_B.first, flag);
+		designated_half_Hull_list.insert(designated_half_Hull_list.end(), hull_A.begin(), hull_A.end());
+
+		auto hull_B = QuickHullRec(farthest_point, vertex_B, segment_B.second, flag);
+		designated_half_Hull_list.insert(designated_half_Hull_list.end(), hull_B.begin(), hull_B.end());
+	}
 
 	// Return half of the Hull
 	return designated_half_Hull_list;
@@ -76,7 +108,7 @@ CConvexHull QuickHull(CGraph& g) {
 	const char BELOW = 'S';
 
 	// Create the template for our Hull
-	CConvexHull Hull(&g); 
+	CConvexHull Hull(&g);
 
 	// In case that the graph has less than 3 vertices, there is no Hull
 	if (g.m_Vertices.empty()) {
@@ -96,7 +128,7 @@ CConvexHull QuickHull(CGraph& g) {
 	// Find the minimum and maximum points on the x-axis
 	horizontally_sorted_vertices.sort([](CVertex* a, CVertex* b) {
 		return a->m_Point.m_X < b->m_Point.m_X;
-	});
+		});
 	CVertex* vertex_A = horizontally_sorted_vertices.front();
 	CVertex* vertex_B = horizontally_sorted_vertices.back();
 	Hull.m_Vertices.push_back(vertex_A);
@@ -106,9 +138,16 @@ CConvexHull QuickHull(CGraph& g) {
 	horizontally_sorted_vertices.pop_front();
 	horizontally_sorted_vertices.pop_back();
 
-	// Determine points above and below the line
-	list<CVertex*> above;
-	list<CVertex*> below;
+	// Determine points above and below the line (first = above, second = below)
+	std::pair<std::list<CVertex*>, std::list<CVertex*>> segments = create_segment(vertex_A, vertex_B, horizontally_sorted_vertices);
+
+	// Perform the recursive QuickHull on above and below segments
+	auto upper_hull = QuickHullRec(vertex_A, vertex_B, segments.first, ABOVE);
+	auto lower_hull = QuickHullRec(vertex_A, vertex_B, segments.second, BELOW);
+
+	// Append the results to the Hull
+	Hull.m_Vertices.insert(Hull.m_Vertices.end(), upper_hull.begin(), upper_hull.end());
+	Hull.m_Vertices.insert(Hull.m_Vertices.end(), lower_hull.begin(), lower_hull.end());
 
 	return Hull;
 }
