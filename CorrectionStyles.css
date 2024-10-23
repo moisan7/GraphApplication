@@ -1,0 +1,270 @@
+body {
+    padding:0;
+    margin:0;
+    font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
+}
+.capcal-nav .portada{
+    font-family: "neue-haas-grotesk-display",Helvetica,Arial,sans-serif;
+    font-size: 1.4rem;
+    letter-spacing: 0.05rem;
+    color: #111;
+    font-weight: 500;
+    line-height: 1.5;
+    box-sizing: inherit;
+    border-radius: 0;
+}
+.portada .logo-uab{
+    position: relative;
+    height: 8rem;
+    width: 35rem;
+    margin: -1.5rem auto 1.5rem;
+    top: 0;
+    left: 0;
+}
+.logo-uab{
+    max-width: 1250px;
+    right: 0;
+    margin-top: 20px !important;
+    border-radius: 0;
+    box-sizing: inherit;
+}
+.logo-uab h1{
+    height: 100%;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    line-height: 1.2;
+    border-radius: 0;
+}
+.portada .logo-uab a {
+    background-image: url("https://www.uab.cat/Xcelerate/WAI/img/UAB-1linia.svg");
+    background-size: auto;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+  }
+
+  .logo-uab a {
+
+    margin-left: 0;
+    display: block;
+    background-repeat: no-repeat;
+    margin-top: 0.5rem;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    color: hsl(220deg,50%,45%);
+    text-decoration: none;
+    background-color: transparent;
+    transition: all 0.25s ease;
+    border-radius: 0;
+    box-sizing: inherit;
+  }
+.menu{
+    background-color: #007e12;
+    margin: 0;
+    display: block;
+    overflow: auto;
+    color: white;
+}
+.menu .derecha{
+    width: 40%;
+    float: left;
+}
+.menu .izquierda{
+    margin-left: 2%;
+    width: 58%;
+    float: left;
+}
+.menu h1{
+    font-weight: 600;
+    font-size: 30px;
+}
+.menu p{
+    font-size: 20px;
+    font-weight: 500;
+}
+.menu span{
+    font-weight: 590;
+}
+
+.resultado{
+    min-height: 40px;
+    width: 100%;
+    background-color : #e9e9e9;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 5px;
+}
+
+.resultado p{
+    font-size: 20px;
+    color: #313236;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+    padding-top: 10px;
+    padding-left: 20px;
+}
+
+.fitxersEnviatsAlServidor{
+ margin-left: 20px;
+}
+.descripcioDeLaCorreccio{
+    margin-left: 20px;
+}
+.descripcioDeLaCorreccio pre{
+    font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
+}
+
+.listaPruebas {
+    margin-left: 20px;
+}
+.listaPruebas .tituloLista{
+    margin-left: 5px;
+}
+.listaPruebas .descripcion{
+    font-weight: 550;
+}
+.listaPruebas .incorrecto{
+    color: #ff0000;
+}
+.listaPruebas .correcto{
+    color: #007e12;
+}
+.listaPruebas ul{
+    margin-top: -10px;
+}
+.listaPruebas li:hover{
+    animation-name: crecer;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+}
+@keyframes crecer {
+    from { font-size: 16px; }
+    to { font-size: 18px; }
+  }
+
+.listaPruebas button{
+    transition: all .5s ease;
+    margin-left: 25px;
+    margin-bottom: 20px;
+    background-color: #007e12;
+    border: 1px solid #d5d9d9;
+    border-radius: 8px;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    box-sizing: border-box;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Amazon Ember",sans-serif;
+    font-size: 13px;
+    line-height: 29px;
+    padding: 0 10px 0 11px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    min-width: 100px;
+}
+.listaPruebas .boton:hover{
+    transform: scale(1.2) perspective(1px)
+}
+.listaPruebas .boton.active{
+    background-color: #f7fafa;
+    border-color: #008296;
+    color: #000;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    outline: 0;
+}
+
+
+.listaPruebas li::marker{
+    content: "▶";
+    color: #007e12;
+}
+.listaPruebas a:link{
+    text-decoration: none;
+    color: inherit;
+}
+.listaPruebas a:hover{
+    animation-name: aclarar;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+}
+@keyframes aclarar {
+    from { color: #000; }
+    to { color: #666; }
+  }
+.listaPruebas a:visited{
+    text-decoration: none;
+    color: inherit;
+}
+
+.test{
+margin-left: 20px;
+}
+.test .sortida{
+    margin-left: 10px;
+}
+.test hr{
+    margin-left: -20px;
+}
+.test span{
+    font-weight: 530;
+}
+.test pre{
+    margin-left: 10px;
+    font-family: 'Fira Code', monospace;
+    font-size: 14px;
+}
+
+
+.pieDePagina{
+    background-color: #004b0a;
+    min-height: 100px;
+    width: 100%;
+    margin: 0;
+    margin-top: 20px;
+    color: white;
+    bottom: 0;
+}
+
+.pieDePagina .derecha{
+    height: inherit;
+    width: 40%;
+    float: left;
+}
+.pieDePagina .izquierda{
+    margin-left: 2%;
+    height: inherit;
+    width: 58%;
+    float: left;
+}
+
+.pieDePagina span{
+    font-weight: 590;
+    color: white;
+}
+
+.pieDePagina li{
+    color: rgba(255, 255, 255, 0.75);
+    font-weight: 600;
+    margin-left: 20px;
+    
+}
+.pieDePagina h3{
+    margin-bottom: -15px;
+}
+
+hr{
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #004b0a, #ccc);
+    margin-top: 2%;
+}
+

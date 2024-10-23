@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Informe de correcció SALESMAN_GREEDY</title>
+<link href="https://fonts.cdnfonts.com/css/neue-haas-grotesk-display-pro" rel="stylesheet">
+<link rel="shortcut icon" href="https://www.uab.cat/Xcelerate/WAI/img/simbol.png">
+</head>
+<style>body{padding:0;margin:0;font-family:'Neue Haas Grotesk Display Pro',sans-serif;background-color:#e9e9e9}.capcal-nav .portada{font-family:neue-haas-grotesk-display,Helvetica,Arial,sans-serif;font-size:1.4rem;letter-spacing:.05rem;color:#111;font-weight:500;line-height:1.5;box-sizing:inherit;border-radius:0}.portada .logo-uab{position:relative;height:8rem;width:35rem;margin:-1.5rem auto 1.5rem;top:0;left:0}.logo-uab{max-width:1250px;right:0;margin-top:20px!important;border-radius:0;box-sizing:inherit}.logo-uab h1{height:100%;margin-top:0;margin-bottom:.75rem;font-weight:600;line-height:1.2;border-radius:0}.portada .logo-uab a{background-image:url(https://www.uab.cat/Xcelerate/WAI/img/UAB-2linies-verd.svg);background-size:auto;width:100%;height:100%;background-position:center}.logo-uab a{margin-left:0;display:block;background-repeat:no-repeat;margin-top:.5rem;text-indent:100%;white-space:nowrap;overflow:hidden;color:hsl(220deg,50%,45%);text-decoration:none;background-color:transparent;transition:all .25s ease;border-radius:0;box-sizing:inherit}.menu{background-color:#007e12;margin:0;display:block;overflow:auto;color:#fff}.menu .derecha{width:40%;float:left}.menu .izquierda{margin-left:2%;width:58%;float:left}.menu h1{font-weight:600;font-size:30px}.menu p{font-size:20px;font-weight:500}.menu span{font-weight:590}.resultado{min-height:40px;width:100%;background-color:#e9e9e9;display:flex;flex-direction:column;padding-bottom:5px}.resultado p{font-size:20px;color:#313236;font-weight:500;margin:0;padding:0;padding-top:10px;padding-left:20px}.fitxersEnviatsAlServidor{margin-left:20px}.descripcioDeLaCorreccio{margin-left:20px}.descripcioDeLaCorreccio pre{font-family:'Neue Haas Grotesk Display Pro',sans-serif}.listaPruebas{margin-left:20px}.listaPruebas .tituloLista{margin-left:5px}.listaPruebas .descripcion{font-weight:550}.listaPruebas .incorrecto{color:red}.listaPruebas .correcto{color:#007e12}.listaPruebas ul{margin-top:-10px}.listaPruebas li:hover{animation-name:crecer;animation-duration:.2s;animation-fill-mode:forwards}@keyframes crecer{from{font-size:16px}to{font-size:18px}}.listaPruebas button{transition:all .5s ease;margin-left:25px;margin-bottom:20px;background-color:#007e12;border:1px solid #d5d9d9;border-radius:8px;box-shadow:rgba(213,217,217,.5) 0 2px 5px 0;box-sizing:border-box;color:#fff;cursor:pointer;display:inline-block;font-family:"Amazon Ember",sans-serif;font-size:13px;line-height:29px;padding:0 10px 0 11px;position:relative;text-align:center;text-decoration:none;user-select:none;-webkit-user-select:none;touch-action:manipulation;vertical-align:middle;min-width:100px}.listaPruebas .boton:hover{transform:scale(1.2) perspective(1px)}.listaPruebas .boton.active{background-color:#f7fafa;border-color:#008296;color:#000;box-shadow:rgba(213,217,217,.5) 0 2px 5px 0;outline:0}.listaPruebas li::marker{content:'\25BA';color:#007e12}.listaPruebas a:link{text-decoration:none;color:inherit}.listaPruebas a:hover{animation-name:aclarar;animation-duration:.2s;animation-fill-mode:forwards}@keyframes aclarar{from{color:#000}to{color:#666}}.listaPruebas a:visited{text-decoration:none;color:inherit}.test{margin-left:20px}.test .sortida{margin-left:10px}.test hr{margin-left:-20px}.test span{font-weight:530}.test pre{margin-left:10px;font-family:'Fira Code',monospace;font-size:14px}.pieDePagina{background-color:#004b0a;min-height:100px;width:100%;margin:0;margin-top:20px;color:#fff;bottom:0}.pieDePagina .derecha{height:inherit;width:40%;float:left}.pieDePagina .izquierda{margin-left:2%;height:inherit;width:58%;float:left}.pieDePagina span{font-weight:590;color:#fff}.pieDePagina li{color:rgba(255,255,255,.75);font-weight:600;margin-left:20px}.pieDePagina h3{margin-bottom:-15px}hr{border:0;height:1px;background:#333;background-image:linear-gradient(to right,#ccc,#004b0a,#ccc);margin-top:2%}div.codigo:not(.copiado1,.copiado2,.copiado3,.copiado4,.copiado5){overflow-x:scroll;background-color:#272822}div.code{white-space:pre}.codigo{display:flex}</style>
+<body>
+<div class="capcal-nav portada">
+<div class="logo-uab">
+<h1>
+<a href="https://www.uab.cat/web/universitat-autonoma-de-barcelona-1345467950436.html">Universitat Autónoma de Barcelona</a>
+</h1>
+</div>
+</div>
+<div class="menu">
+<div class="izquierda">
+<h1>Informe de correcció SALESMAN_GREEDY</h1>
+<p><span>Assignatura:</span>Anàlisis i Diseny d'Algorismes (ADA) </p>
+<h3>Demanat per:</h3>
+<ul>
+<li>1603611 SÁNCHEZ PIN, Moisés Moises.SanchezP@autonoma.cat</li>
+</ul>
+</div>
+<div class="derecha">
+<p style="margin-top: 25px;"><span>Data:</span>Fri Oct  4 09:52:02 2024
+</p>
+<p style="margin-top: 25px;"><span>Corrector:</span>SALESMAN_GREEDY (SALESMAN_GREEDY)</p>
+<h3>Autors:</h3>
+<ul>
+<li>1603611 SÁNCHEZ PIN, Moisés Moises.SanchezP@autonoma.cat</li>
+</ul>
+</div>
+</div>
+<div class="resultado">
+<p><span>Salesman Greedy </span><span id="nota">0.8</span></p>
+<script>
+const notas = document.querySelectorAll("#nota");
+notas.forEach(nota => {
+const valor = parseInt(nota.textContent);
+if (valor >= 5) {
+nota.style.color = "green";
+} else {
+nota.style.color = "red";
+}
+});
+</script>
+</div>
+<div class="fitxersEnviatsAlServidor">
+<h3>Fitxers enviats al servidor:</h3><ul><li>x64\Release\GraphApplication.exe</li>
+<li>GraphApplication\GraphApplication.cpp</li>
+<li>GraphApplication\Graph.h</li>
+<li>GraphApplication\Greedy.cpp</li>
+</ul>
+</div>
+<div class="descripcioDeLaCorreccio">
+<h3>Descripció de la correcció</h3>
+<BR>
+</div>
+<div class="listaPruebas">
+<h3>Filtres de proves:</h3>
+<button class="boton" data-propiedad="correcta" onclick="toggleVisibility(this)" role="button">Correctes</button>
+<button class="boton" data-propiedad="incorrecta" onclick ="toggleVisibility(this)" role="button">Incorrectes</button>
+<script>
+function toggleVisibility(button) {
+var elementos = document.getElementsByClassName('elemento');
+var botones = document.getElementsByTagName('button');
+button.classList.toggle('active');
+var botonesActivos = [];
+for (var i = 0; i < botones.length; i++) {
+if (botones[i].classList.contains('active')) {
+botonesActivos.push(botones[i]);
+}
+}
+for (var i = 0; i < elementos.length; i++) {
+var propiedades = elementos[i].getAttribute('data-propiedades').split(' ');
+var mostrar = true;
+for (var j = 0; j < botonesActivos.length; j++) {
+var propiedadBoton = botonesActivos[j].getAttribute('data-propiedad');
+if (propiedades.includes(propiedadBoton)) {
+mostrar = false;
+break;
+}
+}
+elementos[i].hidden = !mostrar;
+}
+}
+</script>
+<h3>Llista de proves:</h3>
+<ul>
+<li class="elemento" data-propiedades="correcta  "><span class="tituloLista"><a href="#TEST_1">Prova Salesman Greedy Simple<span class = "descripcion">:</span></a></span><span class="correcto"> Correcte</span></li>
+<li class="elemento" data-propiedades="incorrecta  "><span class="tituloLista"><a href="#TEST_2">Prova Salesman Greedy GreedyNoOptimo<span class = "descripcion">:</span></a></span><span class="incorrecto"> Falla amb 5 errors</span></li>
+<li class="elemento" data-propiedades="incorrecta  "><span class="tituloLista"><a href="#TEST_3">Prova Salesman Greedy Graf10_20_3<span class = "descripcion">:</span></a></span><span class="incorrecto"> Falla amb 3 errors</span></li>
+<li class="elemento" data-propiedades="incorrecta  "><span class="tituloLista"><a href="#TEST_4">Prova Salesman Greedy Graf10_20_5<span class = "descripcion">:</span></a></span><span class="incorrecto"> Falla amb 5 errors</span></li>
+<li class="elemento" data-propiedades="incorrecta  "><span class="tituloLista"><a href="#TEST_5">Prova Salesman Greedy Graf10_20_6<span class = "descripcion">:</span></a></span><span class="incorrecto"> Falla amb 6 errors</span></li>
+<li class="elemento" data-propiedades="incorrecta  "><span class="tituloLista"><a href="#TEST_6">Prova Salesman Greedy Graf10_40_4<span class = "descripcion">:</span></a></span><span class="incorrecto"> Falla amb 4 errors</span></li>
+<li class="elemento" data-propiedades="incorrecta  "><span class="tituloLista"><a href="#TEST_7">Prova Salesman Greedy graf20_100_4<span class = "descripcion">:</span></a></span><span class="incorrecto"> Falla amb 4 errors</span></li>
+<li class="elemento" data-propiedades="incorrecta  "><span class="tituloLista"><a href="#TEST_8">Prova Salesman Greedy graf30_300_8<span class = "descripcion">:</span></a></span><span class="incorrecto"> Falla amb 8 errors</span></li>
+<li class="elemento" data-propiedades="incorrecta  "><span class="tituloLista"><a href="#TEST_9">Prova Salesman Greedy Graf50_200_6<span class = "descripcion">:</span></a></span><span class="incorrecto"> Falla amb 6 errors</span></li>
+<li class="elemento" data-propiedades="incorrecta  "><span class="tituloLista"><a href="#TEST_10">Prova Salesman Greedy Graf50_200_7C<span class = "descripcion">:</span></a></span><span class="incorrecto"> Falla amb 8 errors</span></li>
+</ul>
+<script>
+function mostrarElementos(clase) {
+var elementos = document.getElementsByClassName(clase);
+for (var i = 0; i < elementos.length; i++) {
+var liElemento = elementos[i].closest('li');
+var aDestino = liElemento.querySelector('a');
+var aReferencia = aDestino.href;
+var aSeccion = document.getElementsByName(aReferencia.split('#')[1]);
+var padre = aSeccion[0].parentNode;
+if (liElemento.style.display === 'none') {
+liElemento.style.display = 'list-item';
+padre.style.display = 'block';
+} else {
+liElemento.style.display = 'none';
+padre.style.display = 'none';
+}
+}
+}
+</script>
+</div>
+<div class="tests">
+<div class="test elemento" data-propiedades="correcta ">
+<hr>
+<a name="TEST_1">
+<h3>Prova Salesman Greedy Simple</h3>
+</a>
+<p> Fitxer del graf: TestSalesMan\Simple.GR<br>
+Fitxer amb les visites: "TestSalesMan\\Simple.VIS"</p>
+Fitxer amb el cami correcte: "TestSalesMan\\Simple_Greedy.TRK"</p>
+<p> Temps de refèrencia: 7e-05seg.<br>
+Temps de execució máxim: 0.0007seg.<br>
+Temps de execució de la prova: 2.8e-05seg.</P>
+<P><b>CAMI OK:</b> [V0001 &mdash;E0005&rarr; V0002]</P>
+<P><b>CAMI PRACTICA:</b> [V0001 &mdash;E0005&rarr; V0002]</P>
+
+ <b>CORRECTE</b>
+</div>
+<div class="test elemento" data-propiedades="incorrecta ">
+<hr>
+<a name="TEST_2">
+<h3>Prova Salesman Greedy GreedyNoOptimo</h3>
+</a>
+<p> Fitxer del graf: TestSalesMan\GreedyNoOptimo.GR<br>
+Fitxer amb les visites: "TestSalesMan\\GreedyNoOptimo.VIS"</p>
+Fitxer amb el cami correcte: "TestSalesMan\\GreedyNoOptimo_Greedy.TRK"</p>
+<p> Temps de refèrencia: 2e-05seg.<br>
+Temps de execució máxim: 0.0002seg.<br>
+Temps de execució de la prova: 1.8e-05seg.</P>
+<P><b>CAMI OK:</b> [V0001 &mdash;E0019&rarr; V0001 // V0002 &mdash;E0021&rarr; V0001 // V0003 &mdash;E0021$Reverse&rarr; V0001 // V0002 &mdash;E0019$Reverse&rarr; V0001 &mdash;E0017&rarr; V0001 // V0006 &mdash;E0027&rarr; V0001 // V0004 &mdash;E0013&rarr; V0001 // V0009 &mdash;E0015&rarr; V0005]</P>
+<P><b>CAMI PRACTICA:</b> [V0006 &mdash;E0027&rarr; V0006 // V0004 &mdash;E0013&rarr; V0006 // V0009 &mdash;E0015&rarr; V0006 // V0003 &mdash;E0021$Reverse&rarr; V0006 // V0002 &mdash;E0019$Reverse&rarr; V0006 // V0001 &mdash;E0017&rarr; V0006 // V0002 &mdash;E0021&rarr; V0006 // V0001 &mdash;E0019&rarr; V0002]</P>
+
+<b style="color: red; ">Falla amb 5 errors</b>
+<ul>
+<li>TrackOriginError
+<dd>
+El track no comença pel primer vèrtex de Visits
+</dd>
+<li>El camí no acaba correctament
+<dd>
+El track no acaba a l'últim vèrtex de Visits
+</dd>
+<li>Camí tallat
+<dd>
+Cam�  tallat de V0005 a V0003
+</dd>
+<li>Camí tallat
+<dd>
+Cam�  tallat de V0006 a V0002
+</dd>
+<li>Camí tallat
+<dd>
+Cam�  tallat de V0003 a V0001
+</dd>
+</ul><br></div>
+<div class="test elemento" data-propiedades="incorrecta ">
+<hr>
+<a name="TEST_3">
+<h3>Prova Salesman Greedy Graf10_20_3</h3>
+</a>
+<p> Fitxer del graf: TestSalesMan\Graf10_20_3.GR<br>
+Fitxer amb les visites: "TestSalesMan\\Graf10_20_3.VIS"</p>
+Fitxer amb el cami correcte: "TestSalesMan\\Graf10_20_3_Greedy.TRK"</p>
+<p> Temps de refèrencia: 1.8e-05seg.<br>
+Temps de execució máxim: 0.00018seg.<br>
+Temps de execució de la prova: 1.5e-05seg.</P>
+<P><b>CAMI OK:</b> [V0008 &mdash;E0025$Reverse&rarr; V0008 // V0007 &mdash;E0011$Reverse&rarr; V0008 // V0004 &mdash;E0005$Reverse&rarr; V0008 // V0003 &mdash;E0033&rarr; V0006]</P>
+<P><b>CAMI PRACTICA:</b> [V0004 &mdash;E0005$Reverse&rarr; V0004 // V0003 &mdash;E0033&rarr; V0004 // V0008 &mdash;E0025$Reverse&rarr; V0004 // V0007 &mdash;E0011$Reverse&rarr; V0004]</P>
+
+<b style="color: red; ">Falla amb 3 errors</b>
+<ul>
+<li>TrackOriginError
+<dd>
+El track no comença pel primer vèrtex de Visits
+</dd>
+<li>El camí no acaba correctament
+<dd>
+El track no acaba a l'últim vèrtex de Visits
+</dd>
+<li>Camí tallat
+<dd>
+Cam�  tallat de V0006 a V0008
+</dd>
+</ul><br></div>
+<div class="test elemento" data-propiedades="incorrecta ">
+<hr>
+<a name="TEST_4">
+<h3>Prova Salesman Greedy Graf10_20_5</h3>
+</a>
+<p> Fitxer del graf: TestSalesMan\Graf10_20_5.GR<br>
+Fitxer amb les visites: "TestSalesMan\\Graf10_20_5.VIS"</p>
+Fitxer amb el cami correcte: "TestSalesMan\\Graf10_20_5_Greedy.TRK"</p>
+<p> Temps de refèrencia: 2.4e-05seg.<br>
+Temps de execució máxim: 0.00024seg.<br>
+Temps de execució de la prova: 2.3e-05seg.</P>
+<P><b>CAMI OK:</b> [V0007 &mdash;E0037$Reverse&rarr; V0007 // V0008 &mdash;E0013$Reverse&rarr; V0007 // V0006 &mdash;E0031$Reverse&rarr; V0007 // V0003 &mdash;E0021$Reverse&rarr; V0007 // V0005 &mdash;E0007$Reverse&rarr; V0007 // V0001 &mdash;E0001&rarr; V0002]</P>
+<P><b>CAMI PRACTICA:</b> [V0005 &mdash;E0007$Reverse&rarr; V0005 // V0001 &mdash;E0001&rarr; V0005 // V0006 &mdash;E0031$Reverse&rarr; V0005 // V0003 &mdash;E0021$Reverse&rarr; V0005 // V0008 &mdash;E0013$Reverse&rarr; V0005 // V0007 &mdash;E0037$Reverse&rarr; V0008]</P>
+
+<b style="color: red; ">Falla amb 5 errors</b>
+<ul>
+<li>TrackOriginError
+<dd>
+El track no comença pel primer vèrtex de Visits
+</dd>
+<li>El camí no acaba correctament
+<dd>
+El track no acaba a l'últim vèrtex de Visits
+</dd>
+<li>Camí tallat
+<dd>
+Cam�  tallat de V0002 a V0006
+</dd>
+<li>Camí tallat
+<dd>
+Cam�  tallat de V0005 a V0008
+</dd>
+<li>Camí tallat
+<dd>
+Cam�  tallat de V0006 a V0007
+</dd>
+</ul><br></div>
+<div class="test elemento" data-propiedades="incorrecta ">
+<hr>
+<a name="TEST_5">
+<h3>Prova Salesman Greedy Graf10_20_6</h3>
+</a>
+<p> Fitxer del graf: TestSalesMan\Graf10_20_6.GR<br>
+Fitxer amb les visites: "TestSalesMan\\Graf10_20_6.VIS"</p>
+Fitxer amb el cami correcte: "TestSalesMan\\Graf10_20_6_Greedy.TRK"</p>
+<p> Temps de refèrencia: 2.6e-05seg.<br>
+Temps de execució máxim: 0.00026seg.<br>
+Temps de execució de la prova: 2.4e-05seg.</P>
+<P><b>CAMI OK:</b> [V0002 &mdash;E0001$Reverse&rarr; V0002 // V0001 &mdash;E0003&rarr; V0002 // V0003 &mdash;E0023$Reverse&rarr; V0002 // V0004 &mdash;E0033&rarr; V0002 // V0005 &mdash;E0035$Reverse&rarr; V0002 // V0010 &mdash;E0017$Reverse&rarr; V0002 // V0008 &mdash;E0027&rarr; V0002 // V0009 &mdash;E0039$Reverse&rarr; V0007]</P>
+<P><b>CAMI PRACTICA:</b> [V0008 &mdash;E0027&rarr; V0008 // V0009 &mdash;E0039$Reverse&rarr; V0008 // V0004 &mdash;E0033&rarr; V0008 // V0005 &mdash;E0035$Reverse&rarr; V0008 // V0010 &mdash;E0017$Reverse&rarr; V0008 // V0003 &mdash;E0023$Reverse&rarr; V0008 // V0001 &mdash;E0003&rarr; V0008 // V0002 &mdash;E0001$Reverse&rarr; V0001]</P>
+
+<b style="color: red; ">Falla amb 6 errors</b>
+<ul>
+<li>TrackOriginError
+<dd>
+El track no comença pel primer vèrtex de Visits
+</dd>
+<li>El camí no acaba correctament
+<dd>
+El track no acaba a l'últim vèrtex de Visits
+</dd>
+<li>Camí tallat
+<dd>
+Cam�  tallat de V0007 a V0004
+</dd>
+<li>Camí tallat
+<dd>
+Cam�  tallat de V0008 a V0003
+</dd>
+<li>Camí tallat
+<dd>
+Cam�  tallat de V0004 a V0001
+</dd>
+<li>Camí tallat
+<dd>
+Cam�  tallat de V0003 a V0002
+</dd>
+</ul><br></div>
+<div class="test elemento" data-propiedades="incorrecta ">
+<hr>
+<a name="TEST_6">
+<h3>Prova Salesman Greedy Graf10_40_4</h3>
+</a>
+<p> Fitxer del graf: TestSalesMan\Graf10_40_4.GR<br>
+Fitxer amb les visites: "TestSalesMan\\Graf10_40_4.VIS"</p>
+Fitxer amb el cami correcte: "TestSalesMan\\Graf10_40_4_Greedy.TRK"</p>
+<p> Temps de refèrencia: 2e-05seg.<br>
+Temps de execució máxim: 0.0002seg.<br>
+Temps de execució de la prova: 1.8e-05seg.</P>
+<P><b>CAMI OK:</b> [V0003 &mdash;E0003$Reverse&rarr; V0003 // V0002 &mdash;E0033$Reverse&rarr; V0003 // V0008 &mdash;E0013$Reverse&rarr; V0003 // V0007 &mdash;E0011$Reverse&rarr; V0003 // V0006 &mdash;E0039$Reverse&rarr; V0001]</P>
+<P><b>CAMI PRACTICA:</b> [V0006 &mdash;E0039$Reverse&rarr; V0006 // V0008 &mdash;E0013$Reverse&rarr; V0006 // V0007 &mdash;E0011$Reverse&rarr; V0006 // V0003 &mdash;E0003$Reverse&rarr; V0006 // V0002 &mdash;E0033$Reverse&rarr; V0008]</P>
+
+<b style="color: red; ">Falla amb 4 errors</b>
+<ul>
+<li>TrackOriginError
+<dd>
+El track no comença pel primer vèrtex de Visits
+</dd>
+<li>El camí no acaba correctament
+<dd>
+El track no acaba a l'últim vèrtex de Visits
+</dd>
+<li>Camí tallat
+<dd>
+Cam�  tallat de V0001 a V0008
+</dd>
+<li>Camí tallat
+<dd>
+Cam�  tallat de V0006 a V0003
+</dd>
+</ul><br></div>
+<div class="test elemento" data-propiedades="incorrecta ">
+<hr>
+<a name="TEST_7">
+<h3>Prova Salesman Greedy graf20_100_4</h3>
+</a>
+<p> Fitxer del graf: TestSalesMan\graf20_100_4.GR<br>
+Fitxer amb les visites: "TestSalesMan\\graf20_100_4.VIS"</p>
+Fitxer amb el cami correcte: "TestSalesMan\\graf20_100_4_Greedy.TRK"</p>
+<p> Temps de refèrencia: 5.2e-05seg.<br>
+Temps de execució máxim: 0.00052seg.<br>
+Temps de execució de la prova: 5.4e-05seg.</P>
+<P><b>CAMI OK:</b> [V0018 &mdash;E0103$Reverse&rarr; V0018 // V0007 &mdash;E0015&rarr; V0018 // V0009 &mdash;E0173$Reverse&rarr; V0018 // V0017 &mdash;E0087&rarr; V0018 // V0002 &mdash;E0009&rarr; V0006]</P>
+<P><b>CAMI PRACTICA:</b> [V0017 &mdash;E0087&rarr; V0017 // V0002 &mdash;E0009&rarr; V0017 // V0009 &mdash;E0173$Reverse&rarr; V0017 // V0018 &mdash;E0103$Reverse&rarr; V0017 // V0007 &mdash;E0015&rarr; V0009]</P>
+
+<b style="color: red; ">Falla amb 4 errors</b>
+<ul>
+<li>TrackOriginError
+<dd>
+El track no comença pel primer vèrtex de Visits
+</dd>
+<li>El camí no acaba correctament
+<dd>
+El track no acaba a l'últim vèrtex de Visits
+</dd>
+<li>Camí tallat
+<dd>
+Cam�  tallat de V0006 a V0009
+</dd>
+<li>Camí tallat
+<dd>
+Cam�  tallat de V0017 a V0018
+</dd>
+</ul><br></div>
+<div class="test elemento" data-propiedades="incorrecta ">
+<hr>
+<a name="TEST_8">
+<h3>Prova Salesman Greedy graf30_300_8</h3>
+</a>
+<p> Fitxer del graf: TestSalesMan\graf30_300_8.GR<br>
+Fitxer amb les visites: "TestSalesMan\\graf30_300_8.VIS"</p>
+Fitxer amb el cami correcte: "TestSalesMan\\graf30_300_8_Greedy.TRK"</p>
+<p> Temps de refèrencia: 8.3e-05seg.<br>
+Temps de execució máxim: 0.00083seg.<br>
+Temps de execució de la prova: 0.000253seg.</P>
+<P><b>CAMI OK:</b> [V0012 &mdash;E0021$Reverse&rarr; V0012 // V0009 &mdash;E0401$Reverse&rarr; V0012 // V0015 &mdash;E0233$Reverse&rarr; V0012 // V0022 &mdash;E0519&rarr; V0012 // V0011 &mdash;E0313&rarr; V0012 // V0020 &mdash;E0145&rarr; V0012 // V0006 &mdash;E0437$Reverse&rarr; V0012 // V0024 &mdash;E0349&rarr; V0012 // V0008 &mdash;E0127$Reverse&rarr; V0021]</P>
+<P><b>CAMI PRACTICA:</b> [V0008 &mdash;E0127$Reverse&rarr; V0008 // V0006 &mdash;E0437$Reverse&rarr; V0008 // V0024 &mdash;E0349&rarr; V0008 // V0020 &mdash;E0145&rarr; V0008 // V0022 &mdash;E0519&rarr; V0008 // V0011 &mdash;E0313&rarr; V0008 // V0015 &mdash;E0233$Reverse&rarr; V0008 // V0009 &mdash;E0401$Reverse&rarr; V0008 // V0012 &mdash;E0021$Reverse&rarr; V0009]</P>
+
+<b style="color: red; ">Falla amb 8 errors</b>
+<ul>
+<li>TrackOriginError
+<dd>
+El track no comença pel primer vèrtex de Visits
+</dd>
+<li>El camí no acaba correctament
+<dd>
+El track no acaba a l'últim vèrtex de Visits
+</dd>
+<li>Camí tallat
+<dd>
+Cam�  tallat de V0021 a V0006
+</dd>
+<li>Camí tallat
+<dd>
+Cam�  tallat de V0008 a V0020
+</dd>
+<li>Camí tallat
+<dd>
+Cam�  tallat de V0006 a V0022
+</dd>
+<li>Camí tallat
+<dd>
+Cam�  tallat de V0020 a V0015
+</dd>
+<li>Camí tallat
+<dd>
+Cam�  tallat de V0022 a V0009
+</dd>
+<li>Camí tallat
+<dd>
+Cam�  tallat de V0015 a V0012
+</dd>
+</ul><br></div>
+<div class="test elemento" data-propiedades="incorrecta ">
+<hr>
+<a name="TEST_9">
+<h3>Prova Salesman Greedy Graf50_200_6</h3>
+</a>
+<p> Fitxer del graf: TestSalesMan\Graf50_200_6.GR<br>
+Fitxer amb les visites: "TestSalesMan\\Graf50_200_6.VIS"</p>
+Fitxer amb el cami correcte: "TestSalesMan\\Graf50_200_6_Greedy.TRK"</p>
+<p> Temps de refèrencia: 3.7e-05seg.<br>
+Temps de execució máxim: 0.00037seg.<br>
+Temps de execució de la prova: 8e-05seg.</P>
+<P><b>CAMI OK:</b> [V0010 &mdash;E0111&rarr; V0010 // V0012 &mdash;E0113&rarr; V0010 // V0014 &mdash;E0045$Reverse&rarr; V0010 // V0019 &mdash;E0135&rarr; V0010 // V0007 &mdash;E0011$Reverse&rarr; V0010 // V0003 &mdash;E0007&rarr; V0010 // V0005 &mdash;E0077&rarr; V0012]</P>
+<P><b>CAMI PRACTICA:</b> [V0005 &mdash;E0077&rarr; V0005 // V0003 &mdash;E0007&rarr; V0005 // V0019 &mdash;E0135&rarr; V0005 // V0007 &mdash;E0011$Reverse&rarr; V0005 // V0014 &mdash;E0045$Reverse&rarr; V0005 // V0010 &mdash;E0111&rarr; V0005 // V0012 &mdash;E0113&rarr; V0014]</P>
+
+<b style="color: red; ">Falla amb 6 errors</b>
+<ul>
+<li>TrackOriginError
+<dd>
+El track no comença pel primer vèrtex de Visits
+</dd>
+<li>El camí no acaba correctament
+<dd>
+El track no acaba a l'últim vèrtex de Visits
+</dd>
+<li>Camí tallat
+<dd>
+Cam�  tallat de V0012 a V0003
+</dd>
+<li>Camí tallat
+<dd>
+Cam�  tallat de V0005 a V0019
+</dd>
+<li>Camí tallat
+<dd>
+Cam�  tallat de V0003 a V0014
+</dd>
+<li>Camí tallat
+<dd>
+Cam�  tallat de V0019 a V0010
+</dd>
+</ul><br></div>
+<div class="test elemento" data-propiedades="incorrecta ">
+<hr>
+<a name="TEST_10">
+<h3>Prova Salesman Greedy Graf50_200_7C</h3>
+</a>
+<p> Fitxer del graf: TestSalesMan\Graf50_200_7C.GR<br>
+Fitxer amb les visites: "TestSalesMan\\Graf50_200_7C.VIS"</p>
+Fitxer amb el cami correcte: "TestSalesMan\\Graf50_200_7C_Greedy.TRK"</p>
+<p> Temps de refèrencia: 2.8e-05seg.<br>
+Temps de execució máxim: 0.00028seg.<br>
+Temps de execució de la prova: 3e-05seg.</P>
+<P><b>CAMI OK:</b> [V0001 &mdash;E0017&rarr; V0001 // V0010 &mdash;E0017$Reverse&rarr; V0001 &mdash;E0001&rarr; V0001 // V0002 &mdash;E0021$Reverse&rarr; V0001 // V0009 &mdash;E0015$Reverse&rarr; V0001 // V0004 &mdash;E0011&rarr; V0001 // V0007 &mdash;E0029&rarr; V0001 // V0002 &mdash;E0003&rarr; V0001 // V0003 &mdash;E0003$Reverse&rarr; V0001 // V0002 &mdash;E0001$Reverse&rarr; V0001]</P>
+<P><b>CAMI PRACTICA:</b> [V0003 &mdash;E0003$Reverse&rarr; V0003 // V0002 &mdash;E0001$Reverse&rarr; V0003 // V0007 &mdash;E0029&rarr; V0003 // V0002 &mdash;E0003&rarr; V0003 // V0004 &mdash;E0011&rarr; V0003 // V0009 &mdash;E0015$Reverse&rarr; V0003 // V0002 &mdash;E0021$Reverse&rarr; V0003 // V0010 &mdash;E0017$Reverse&rarr; V0003 // V0001 &mdash;E0001&rarr; V0003 // V0001 &mdash;E0017&rarr; V0010]</P>
+
+<b style="color: red; ">Falla amb 8 errors</b>
+<ul>
+<li>TrackOriginError
+<dd>
+El track no comença pel primer vèrtex de Visits
+</dd>
+<li>El camí no acaba correctament
+<dd>
+El track no acaba a l'últim vèrtex de Visits
+</dd>
+<li>Camí tallat
+<dd>
+Cam�  tallat de V0001 a V0007
+</dd>
+<li>Camí tallat
+<dd>
+Cam�  tallat de V0003 a V0004
+</dd>
+<li>Camí tallat
+<dd>
+Cam�  tallat de V0007 a V0009
+</dd>
+<li>Camí tallat
+<dd>
+Cam�  tallat de V0004 a V0002
+</dd>
+<li>Camí tallat
+<dd>
+Cam�  tallat de V0009 a V0010
+</dd>
+<li>Camí tallat
+<dd>
+Cam�  tallat de V0002 a V0001
+</dd>
+</ul><br></div>
+</div>
+<div class="pieDePagina">
+<div class="izquierda">
+<h3>Demanat per:</h3>
+<ul>
+<li>1603611 SÁNCHEZ PIN, Moisés Moises.SanchezP@autonoma.cat</li>
+</ul>
+</div>
+<div class="derecha">
+<h3>Autors:</h3>
+<ul>
+<li>1603611 SÁNCHEZ PIN, Moisés Moises.SanchezP@autonoma.cat</li>
+</ul>
+</div>
+</div>
+</body>
+</html>
