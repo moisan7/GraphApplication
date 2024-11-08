@@ -1,6 +1,3 @@
-// AssertsMaximFluxe.cpp : Este archivo contiene la función "main". La ejecución del programa comienza y termina ahí.
-//
-
 #pragma once
 
 #include <stdlib.h>
@@ -304,6 +301,10 @@ public:
 	bool m_Marca;
 	// TrobaCami
 	bool m_JaHePassat;
+	// Contador de visites realitzades a aquest vertex
+	int m_visitCount;
+	// index dins de matrius temporals (per exemple utilitzada en backtracking)
+	int m_indexMatrix;
 
 	// Métodes
 	CEdge* FindEdge(const char* name);
