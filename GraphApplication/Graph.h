@@ -302,7 +302,7 @@ public:
 	// TrobaCami
 	bool m_JaHePassat;
 	// Contador de visites realitzades a aquest vertex
-	int m_visitCount;
+	int m_count;
 	// index dins de matrius temporals (per exemple utilitzada en backtracking)
 	int m_indexMatrix;
 
@@ -468,6 +468,10 @@ public:
 	//CTrack() { m_pGraph = NULL; }
 	CTrack(CGraph* pGraph) {
 		m_pGraph = pGraph;
+	}
+	CTrack(CGraph* pGraph, list<CEdge*> Edges) {
+		m_pGraph = pGraph;
+		m_Edges = Edges;
 	}
 	void SetGraph(CGraph* pGraph) {
 		Clear();
