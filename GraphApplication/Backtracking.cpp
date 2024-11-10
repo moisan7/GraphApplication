@@ -29,7 +29,7 @@ struct NodeCami2 {
 
 //versio de SALESMAN backtracking pur amb CTRACK per guarda cami actual
 
-
+/*
 void SalesmanTrackBacktrackingRec(CVertex* pActual)
 {
 	//we are not going to explore a vertex if the current lengh is already longer that the shortest way
@@ -192,7 +192,7 @@ CTrack SalesmanTrackBacktracking(CGraph& graph, CVisits& visits)
 	return NULL;
 }
 
-/*
+*/
 //versio versio de SALESMAN backtracking puramb amb llista enlla�ada NodeCami2 per guarda cami actual
 
 void SalesmanTrackBacktrackingRec(NodeCami2* pAnterior, CVertex* pActual)
@@ -312,7 +312,7 @@ CTrack SalesmanTrackBacktracking(CGraph& graph, CVisits& visits)
 
 	return NULL;
 }
-*/
+
 
 
 // =============================================================================
