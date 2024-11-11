@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title> Informe de correcció SALESMAN_GREEDY</title>
+<title> Informe de correcció SALESMAN_BACKTRACKING_PUR</title>
 <link href="https://fonts.cdnfonts.com/css/neue-haas-grotesk-display-pro" rel="stylesheet">
 <link rel="shortcut icon" href="https://www.uab.cat/Xcelerate/WAI/img/simbol.png">
 </head>
@@ -19,7 +19,7 @@
 </div>
 <div class="menu">
 <div class="izquierda">
-<h1>Informe de correcció SALESMAN_GREEDY</h1>
+<h1>Informe de correcció SALESMAN_BACKTRACKING_PUR</h1>
 <p><span>Lliurament:</span>Pràctica Lliurament Backtracking (SALESMAN_BACKTRACKING)</p>
 <p><span>Assignatura:</span>Anàlisis i Diseny d'Algorismes (ADA) </p>
 <h3>Demanat per:</h3>
@@ -28,9 +28,9 @@
 </ul>
 </div>
 <div class="derecha">
-<p style="margin-top: 25px;"><span>Data:</span>Mon Nov 11 09:44:20 2024
+<p style="margin-top: 25px;"><span>Data:</span>Mon Nov 11 09:44:21 2024
 </p>
-<p style="margin-top: 25px;"><span>Corrector:</span>SALESMAN_GREEDY (SALESMAN_GREEDY)</p>
+<p style="margin-top: 25px;"><span>Corrector:</span>SALESMAN_BACKTRACKING_PUR (SALESMAN_BACKTRACKING_PUR)</p>
 <h3>Autors:</h3>
 <ul>
 <li>1603611 SÁNCHEZ PIN, Moisés Moises.SanchezP@autonoma.cat</li>
@@ -38,7 +38,7 @@
 </div>
 </div>
 <div class="resultado">
-<p><span>Salesman Greedy </span><span id="nota">9.84186</span></p>
+<p><span>Backtracking pur </span><span id="nota">11</span></p>
 <script>
 const notas = document.querySelectorAll("#nota");
 notas.forEach(nota => {
@@ -55,7 +55,7 @@ nota.style.color = "red";
 <h3>Fitxers enviats al servidor:</h3><ul><li>x64\Release\GraphApplication.exe</li>
 <li>GraphApplication\GraphApplication.cpp</li>
 <li>GraphApplication\Graph.h</li>
-<li>GraphApplication\Greedy.cpp</li>
+<li>GraphApplication\Backtracking.cpp</li>
 </ul>
 </div>
 <div class="descripcioDeLaCorreccio">
@@ -93,16 +93,17 @@ elementos[i].hidden = !mostrar;
 </script>
 <h3>Llista de proves:</h3>
 <ul>
-<li class="elemento" data-propiedades="correcta  "><span class="tituloLista"><a href="#TEST_1">Prova Salesman Greedy Simple<span class = "descripcion">:</span></a></span><span class="correcto"> Correcte</span></li>
-<li class="elemento" data-propiedades="correcta  "><span class="tituloLista"><a href="#TEST_2">Prova Salesman Greedy GreedyNoOptimo<span class = "descripcion">:</span></a></span><span class="correcto"> Correcte</span></li>
-<li class="elemento" data-propiedades="correcta  "><span class="tituloLista"><a href="#TEST_3">Prova Salesman Greedy Graf10_20_3<span class = "descripcion">:</span></a></span><span class="correcto"> Correcte</span></li>
-<li class="elemento" data-propiedades="correcta  "><span class="tituloLista"><a href="#TEST_4">Prova Salesman Greedy Graf10_20_5<span class = "descripcion">:</span></a></span><span class="correcto"> Correcte</span></li>
-<li class="elemento" data-propiedades="correcta  "><span class="tituloLista"><a href="#TEST_5">Prova Salesman Greedy Graf10_20_6<span class = "descripcion">:</span></a></span><span class="correcto"> Correcte</span></li>
-<li class="elemento" data-propiedades="correcta  "><span class="tituloLista"><a href="#TEST_6">Prova Salesman Greedy Graf10_40_4<span class = "descripcion">:</span></a></span><span class="correcto"> Correcte</span></li>
-<li class="elemento" data-propiedades="correcta  "><span class="tituloLista"><a href="#TEST_7">Prova Salesman Greedy graf20_100_4<span class = "descripcion">:</span></a></span><span class="correcto"> Correcte</span></li>
-<li class="elemento" data-propiedades="correcta  "><span class="tituloLista"><a href="#TEST_8">Prova Salesman Greedy graf30_300_8<span class = "descripcion">:</span></a></span><span class="correcto"> Correcte</span></li>
-<li class="elemento" data-propiedades="correcta  "><span class="tituloLista"><a href="#TEST_9">Prova Salesman Greedy Graf50_200_6<span class = "descripcion">:</span></a></span><span class="correcto"> Correcte</span></li>
-<li class="elemento" data-propiedades="correcta  "><span class="tituloLista"><a href="#TEST_10">Prova Salesman Greedy Graf50_200_7C<span class = "descripcion">:</span></a></span><span class="correcto"> Correcte</span></li>
+<li class="elemento" data-propiedades="correcta  "><span class="tituloLista"><a href="#TEST_1">Prova Salesman Backtracking Simple<span class = "descripcion">:</span></a></span><span class="correcto"> Correcte</span></li>
+<li class="elemento" data-propiedades="correcta  "><span class="tituloLista"><a href="#TEST_2">Prova Salesman Backtracking GreedyNoOptimo<span class = "descripcion">:</span></a></span><span class="correcto"> Correcte</span></li>
+<li class="elemento" data-propiedades="correcta  "><span class="tituloLista"><a href="#TEST_3">Prova Salesman Backtracking RepeatVertex<span class = "descripcion">:</span></a></span><span class="correcto"> Correcte</span></li>
+<li class="elemento" data-propiedades="correcta  "><span class="tituloLista"><a href="#TEST_4">Prova Salesman Backtracking AfterEnd<span class = "descripcion">:</span></a></span><span class="correcto"> Correcte</span></li>
+<li class="elemento" data-propiedades="correcta  "><span class="tituloLista"><a href="#TEST_5">Prova Salesman Backtracking Graf10_20_3<span class = "descripcion">:</span></a></span><span class="correcto"> Correcte</span></li>
+<li class="elemento" data-propiedades="correcta  "><span class="tituloLista"><a href="#TEST_6">Prova Salesman Backtracking Graf10_20_5<span class = "descripcion">:</span></a></span><span class="correcto"> Correcte</span></li>
+<li class="elemento" data-propiedades="correcta  "><span class="tituloLista"><a href="#TEST_7">Prova Salesman Backtracking Graf10_20_6<span class = "descripcion">:</span></a></span><span class="correcto"> Correcte</span></li>
+<li class="elemento" data-propiedades="correcta  "><span class="tituloLista"><a href="#TEST_8">Prova Salesman Backtracking Graf10_40_4<span class = "descripcion">:</span></a></span><span class="correcto"> Correcte</span></li>
+<li class="elemento" data-propiedades="correcta  "><span class="tituloLista"><a href="#TEST_9">Prova Salesman Backtracking graf20_100_4<span class = "descripcion">:</span></a></span><span class="correcto"> Correcte</span></li>
+<li class="elemento" data-propiedades="correcta  "><span class="tituloLista"><a href="#TEST_10">Prova Salesman Backtracking Graf50_200_6<span class = "descripcion">:</span></a></span><span class="correcto"> Correcte</span></li>
+<li class="elemento" data-propiedades="correcta  "><span class="tituloLista"><a href="#TEST_11">Prova Salesman Backtracking Graf50_200_7C<span class = "descripcion">:</span></a></span><span class="correcto"> Correcte</span></li>
 </ul>
 <script>
 function mostrarElementos(clase) {
@@ -128,14 +129,14 @@ padre.style.display = 'none';
 <div class="test elemento" data-propiedades="correcta ">
 <hr>
 <a name="TEST_1">
-<h3>Prova Salesman Greedy Simple</h3>
+<h3>Prova Salesman Backtracking Simple</h3>
 </a>
 <p> Fitxer del graf: TestSalesMan\Simple.GR<br>
 Fitxer amb les visites: "TestSalesMan\\Simple.VIS"</p>
-Fitxer amb el cami correcte: "TestSalesMan\\Simple_Greedy.TRK"</p>
-<p> Temps de refèrencia: 7e-05seg.<br>
-Temps de execució máxim: 0.0007seg.<br>
-Temps de execució de la prova: 2e-05seg.</P>
+Fitxer amb el cami correcte: "TestSalesMan\\Simple.TRK"</p>
+<p> Temps de referència: 4e-06seg.<br>
+Temps de execució máxim: 4e-05seg.<br>
+Temps de execució de la prova: 4e-06seg.</P>
 <P><b>CAMI OK:</b> [V0001 &mdash;E0005&rarr; V0002]</P>
 <P><b>CAMI PRACTICA:</b> [V0001 &mdash;E0005&rarr; V0002]</P>
 
@@ -144,30 +145,62 @@ Temps de execució de la prova: 2e-05seg.</P>
 <div class="test elemento" data-propiedades="correcta ">
 <hr>
 <a name="TEST_2">
-<h3>Prova Salesman Greedy GreedyNoOptimo</h3>
+<h3>Prova Salesman Backtracking GreedyNoOptimo</h3>
 </a>
 <p> Fitxer del graf: TestSalesMan\GreedyNoOptimo.GR<br>
 Fitxer amb les visites: "TestSalesMan\\GreedyNoOptimo.VIS"</p>
-Fitxer amb el cami correcte: "TestSalesMan\\GreedyNoOptimo_Greedy.TRK"</p>
-<p> Temps de refèrencia: 2e-05seg.<br>
-Temps de execució máxim: 0.0002seg.<br>
-Temps de execució de la prova: 2.4e-05seg.</P>
-<P><b>CAMI OK:</b> [V0001 &mdash;E0019&rarr; V0001 // V0002 &mdash;E0021&rarr; V0001 // V0003 &mdash;E0021$Reverse&rarr; V0001 // V0002 &mdash;E0019$Reverse&rarr; V0001 &mdash;E0017&rarr; V0001 // V0006 &mdash;E0027&rarr; V0001 // V0004 &mdash;E0013&rarr; V0001 // V0009 &mdash;E0015&rarr; V0005]</P>
-<P><b>CAMI PRACTICA:</b> [V0001 &mdash;E0019&rarr; V0001 // V0002 &mdash;E0021&rarr; V0001 // V0003 &mdash;E0021$Reverse&rarr; V0001 // V0002 &mdash;E0019$Reverse&rarr; V0001 &mdash;E0017&rarr; V0001 // V0006 &mdash;E0027&rarr; V0001 // V0004 &mdash;E0013&rarr; V0001 // V0009 &mdash;E0015&rarr; V0005]</P>
+Fitxer amb el cami correcte: "TestSalesMan\\GreedyNoOptimo.TRK"</p>
+<p> Temps de referència: 0.001229seg.<br>
+Temps de execució máxim: 0.01229seg.<br>
+Temps de execució de la prova: 0.000344seg.</P>
+<P><b>CAMI OK:</b> [V0001 &mdash;E0017&rarr; V0001 // V0006 &mdash;E0017$Reverse&rarr; V0001 &mdash;E0019&rarr; V0001 // V0002 &mdash;E0021&rarr; V0001 // V0003 &mdash;E0023&rarr; V0001 // V0004 &mdash;E0013&rarr; V0001 // V0009 &mdash;E0015&rarr; V0005]</P>
+<P><b>CAMI PRACTICA:</b> [V0001 &mdash;E0017&rarr; V0001 // V0006 &mdash;E0017$Reverse&rarr; V0001 &mdash;E0019&rarr; V0001 // V0002 &mdash;E0021&rarr; V0001 // V0003 &mdash;E0023&rarr; V0001 // V0004 &mdash;E0013&rarr; V0001 // V0009 &mdash;E0015&rarr; V0005]</P>
 
  <b>CORRECTE</b>
 </div>
 <div class="test elemento" data-propiedades="correcta ">
 <hr>
 <a name="TEST_3">
-<h3>Prova Salesman Greedy Graf10_20_3</h3>
+<h3>Prova Salesman Backtracking RepeatVertex</h3>
+</a>
+<p> Fitxer del graf: TestSalesMan\RepeatVertex.GR<br>
+Fitxer amb les visites: "TestSalesMan\\RepeatVertex.VIS"</p>
+Fitxer amb el cami correcte: "TestSalesMan\\RepeatVertex.TRK"</p>
+<p> Temps de referència: 0.01412seg.<br>
+Temps de execució máxim: 0.1412seg.<br>
+Temps de execució de la prova: 0.001257seg.</P>
+<P><b>CAMI OK:</b> [V0001 &mdash;E0001&rarr; V0001 // V0002 &mdash;E0003&rarr; V0001 // V0003 &mdash;E0009&rarr; V0001 // V0011 &mdash;E0013&rarr; V0001 // V0010 &mdash;E0015$Reverse&rarr; V0001 // V0006 &mdash;E0017&rarr; V0001 // V0007 &mdash;E0019&rarr; V0001 // V0008 &mdash;E0021&rarr; V0001 // V0009 &mdash;E0025&rarr; V0001 // V0011 &mdash;E0009$Reverse&rarr; V0001 // V0003 &mdash;E0005&rarr; V0001 // V0004 &mdash;E0007&rarr; V0005]</P>
+<P><b>CAMI PRACTICA:</b> [V0001 &mdash;E0001&rarr; V0001 // V0002 &mdash;E0003&rarr; V0001 // V0003 &mdash;E0009&rarr; V0001 // V0011 &mdash;E0013&rarr; V0001 // V0010 &mdash;E0015$Reverse&rarr; V0001 // V0006 &mdash;E0017&rarr; V0001 // V0007 &mdash;E0019&rarr; V0001 // V0008 &mdash;E0021&rarr; V0001 // V0009 &mdash;E0025&rarr; V0001 // V0011 &mdash;E0009$Reverse&rarr; V0001 // V0003 &mdash;E0005&rarr; V0001 // V0004 &mdash;E0007&rarr; V0005]</P>
+
+ <b>CORRECTE</b>
+</div>
+<div class="test elemento" data-propiedades="correcta ">
+<hr>
+<a name="TEST_4">
+<h3>Prova Salesman Backtracking AfterEnd</h3>
+</a>
+<p> Fitxer del graf: TestSalesMan\AfterEnd.GR<br>
+Fitxer amb les visites: "TestSalesMan\\AfterEnd.VIS"</p>
+Fitxer amb el cami correcte: "TestSalesMan\\AfterEnd.TRK"</p>
+<p> Temps de referència: 0.000283seg.<br>
+Temps de execució máxim: 0.00283seg.<br>
+Temps de execució de la prova: 0.000114seg.</P>
+<P><b>CAMI OK:</b> [V0001 &mdash;E0003&rarr; V0001 // V0009 &mdash;E0007&rarr; V0001 // V0008 &mdash;E0009&rarr; V0001 // V0003 &mdash;E0011&rarr; V0001 // V0006 &mdash;E0013&rarr; V0001 // V0007 &mdash;E0015&rarr; V0001 // V0004 &mdash;E0017&rarr; V0001 // V0005 &mdash;E0019&rarr; V0001 // V0003 &mdash;E0009$Reverse&rarr; V0008]</P>
+<P><b>CAMI PRACTICA:</b> [V0001 &mdash;E0003&rarr; V0001 // V0009 &mdash;E0007&rarr; V0001 // V0008 &mdash;E0009&rarr; V0001 // V0003 &mdash;E0011&rarr; V0001 // V0006 &mdash;E0013&rarr; V0001 // V0007 &mdash;E0015&rarr; V0001 // V0004 &mdash;E0017&rarr; V0001 // V0005 &mdash;E0019&rarr; V0001 // V0003 &mdash;E0009$Reverse&rarr; V0008]</P>
+
+ <b>CORRECTE</b>
+</div>
+<div class="test elemento" data-propiedades="correcta ">
+<hr>
+<a name="TEST_5">
+<h3>Prova Salesman Backtracking Graf10_20_3</h3>
 </a>
 <p> Fitxer del graf: TestSalesMan\Graf10_20_3.GR<br>
 Fitxer amb les visites: "TestSalesMan\\Graf10_20_3.VIS"</p>
-Fitxer amb el cami correcte: "TestSalesMan\\Graf10_20_3_Greedy.TRK"</p>
-<p> Temps de refèrencia: 1.8e-05seg.<br>
-Temps de execució máxim: 0.00018seg.<br>
-Temps de execució de la prova: 2e-05seg.</P>
+Fitxer amb el cami correcte: "TestSalesMan\\Graf10_20_3.TRK"</p>
+<p> Temps de referència: 0.000162seg.<br>
+Temps de execució máxim: 0.00162seg.<br>
+Temps de execució de la prova: 6.6e-05seg.</P>
 <P><b>CAMI OK:</b> [V0008 &mdash;E0025$Reverse&rarr; V0008 // V0007 &mdash;E0011$Reverse&rarr; V0008 // V0004 &mdash;E0005$Reverse&rarr; V0008 // V0003 &mdash;E0033&rarr; V0006]</P>
 <P><b>CAMI PRACTICA:</b> [V0008 &mdash;E0025$Reverse&rarr; V0008 // V0007 &mdash;E0011$Reverse&rarr; V0008 // V0004 &mdash;E0005$Reverse&rarr; V0008 // V0003 &mdash;E0033&rarr; V0006]</P>
 
@@ -175,47 +208,47 @@ Temps de execució de la prova: 2e-05seg.</P>
 </div>
 <div class="test elemento" data-propiedades="correcta ">
 <hr>
-<a name="TEST_4">
-<h3>Prova Salesman Greedy Graf10_20_5</h3>
+<a name="TEST_6">
+<h3>Prova Salesman Backtracking Graf10_20_5</h3>
 </a>
 <p> Fitxer del graf: TestSalesMan\Graf10_20_5.GR<br>
 Fitxer amb les visites: "TestSalesMan\\Graf10_20_5.VIS"</p>
-Fitxer amb el cami correcte: "TestSalesMan\\Graf10_20_5_Greedy.TRK"</p>
-<p> Temps de refèrencia: 2.4e-05seg.<br>
-Temps de execució máxim: 0.00024seg.<br>
-Temps de execució de la prova: 2.6e-05seg.</P>
-<P><b>CAMI OK:</b> [V0007 &mdash;E0037$Reverse&rarr; V0007 // V0008 &mdash;E0013$Reverse&rarr; V0007 // V0006 &mdash;E0031$Reverse&rarr; V0007 // V0003 &mdash;E0021$Reverse&rarr; V0007 // V0005 &mdash;E0007$Reverse&rarr; V0007 // V0001 &mdash;E0001&rarr; V0002]</P>
-<P><b>CAMI PRACTICA:</b> [V0007 &mdash;E0037$Reverse&rarr; V0007 // V0008 &mdash;E0013$Reverse&rarr; V0007 // V0006 &mdash;E0031$Reverse&rarr; V0007 // V0003 &mdash;E0021$Reverse&rarr; V0007 // V0005 &mdash;E0007$Reverse&rarr; V0007 // V0001 &mdash;E0001&rarr; V0002]</P>
+Fitxer amb el cami correcte: "TestSalesMan\\Graf10_20_5.TRK"</p>
+<p> Temps de referència: 0.035897seg.<br>
+Temps de execució máxim: 0.35897seg.<br>
+Temps de execució de la prova: 0.010155seg.</P>
+<P><b>CAMI OK:</b> [V0007 &mdash;E0029$Reverse&rarr; V0007 // V0003 &mdash;E0021$Reverse&rarr; V0007 // V0005 &mdash;E0021&rarr; V0007 // V0003 &mdash;E0031&rarr; V0007 // V0006 &mdash;E0013&rarr; V0007 // V0008 &mdash;E0019&rarr; V0002]</P>
+<P><b>CAMI PRACTICA:</b> [V0007 &mdash;E0029$Reverse&rarr; V0007 // V0003 &mdash;E0021$Reverse&rarr; V0007 // V0005 &mdash;E0021&rarr; V0007 // V0003 &mdash;E0031&rarr; V0007 // V0006 &mdash;E0013&rarr; V0007 // V0008 &mdash;E0019&rarr; V0002]</P>
 
  <b>CORRECTE</b>
 </div>
 <div class="test elemento" data-propiedades="correcta ">
 <hr>
-<a name="TEST_5">
-<h3>Prova Salesman Greedy Graf10_20_6</h3>
+<a name="TEST_7">
+<h3>Prova Salesman Backtracking Graf10_20_6</h3>
 </a>
 <p> Fitxer del graf: TestSalesMan\Graf10_20_6.GR<br>
 Fitxer amb les visites: "TestSalesMan\\Graf10_20_6.VIS"</p>
-Fitxer amb el cami correcte: "TestSalesMan\\Graf10_20_6_Greedy.TRK"</p>
-<p> Temps de refèrencia: 2.6e-05seg.<br>
-Temps de execució máxim: 0.00026seg.<br>
-Temps de execució de la prova: 4.2e-05seg.</P>
-<P><b>CAMI OK:</b> [V0002 &mdash;E0001$Reverse&rarr; V0002 // V0001 &mdash;E0003&rarr; V0002 // V0003 &mdash;E0023$Reverse&rarr; V0002 // V0004 &mdash;E0033&rarr; V0002 // V0005 &mdash;E0035$Reverse&rarr; V0002 // V0010 &mdash;E0017$Reverse&rarr; V0002 // V0008 &mdash;E0027&rarr; V0002 // V0009 &mdash;E0039$Reverse&rarr; V0007]</P>
-<P><b>CAMI PRACTICA:</b> [V0002 &mdash;E0001$Reverse&rarr; V0002 // V0001 &mdash;E0003&rarr; V0002 // V0003 &mdash;E0023$Reverse&rarr; V0002 // V0004 &mdash;E0033&rarr; V0002 // V0005 &mdash;E0035$Reverse&rarr; V0002 // V0010 &mdash;E0017$Reverse&rarr; V0002 // V0008 &mdash;E0027&rarr; V0002 // V0009 &mdash;E0039$Reverse&rarr; V0007]</P>
+Fitxer amb el cami correcte: "TestSalesMan\\Graf10_20_6.TRK"</p>
+<p> Temps de referència: 0.003264seg.<br>
+Temps de execució máxim: 0.03264seg.<br>
+Temps de execució de la prova: 0.001059seg.</P>
+<P><b>CAMI OK:</b> [V0002 &mdash;E0001$Reverse&rarr; V0002 // V0001 &mdash;E0013&rarr; V0002 // V0008 &mdash;E0017&rarr; V0002 // V0010 &mdash;E0035&rarr; V0002 // V0005 &mdash;E0019&rarr; V0002 // V0003 &mdash;E0023$Reverse&rarr; V0002 // V0004 &mdash;E0011&rarr; V0007]</P>
+<P><b>CAMI PRACTICA:</b> [V0002 &mdash;E0001$Reverse&rarr; V0002 // V0001 &mdash;E0013&rarr; V0002 // V0008 &mdash;E0017&rarr; V0002 // V0010 &mdash;E0035&rarr; V0002 // V0005 &mdash;E0019&rarr; V0002 // V0003 &mdash;E0023$Reverse&rarr; V0002 // V0004 &mdash;E0011&rarr; V0007]</P>
 
  <b>CORRECTE</b>
 </div>
 <div class="test elemento" data-propiedades="correcta ">
 <hr>
-<a name="TEST_6">
-<h3>Prova Salesman Greedy Graf10_40_4</h3>
+<a name="TEST_8">
+<h3>Prova Salesman Backtracking Graf10_40_4</h3>
 </a>
 <p> Fitxer del graf: TestSalesMan\Graf10_40_4.GR<br>
 Fitxer amb les visites: "TestSalesMan\\Graf10_40_4.VIS"</p>
-Fitxer amb el cami correcte: "TestSalesMan\\Graf10_40_4_Greedy.TRK"</p>
-<p> Temps de refèrencia: 2e-05seg.<br>
-Temps de execució máxim: 0.0002seg.<br>
-Temps de execució de la prova: 2.3e-05seg.</P>
+Fitxer amb el cami correcte: "TestSalesMan\\Graf10_40_4.TRK"</p>
+<p> Temps de referència: 0.001192seg.<br>
+Temps de execució máxim: 0.01192seg.<br>
+Temps de execució de la prova: 0.000351seg.</P>
 <P><b>CAMI OK:</b> [V0003 &mdash;E0003$Reverse&rarr; V0003 // V0002 &mdash;E0033$Reverse&rarr; V0003 // V0008 &mdash;E0013$Reverse&rarr; V0003 // V0007 &mdash;E0011$Reverse&rarr; V0003 // V0006 &mdash;E0039$Reverse&rarr; V0001]</P>
 <P><b>CAMI PRACTICA:</b> [V0003 &mdash;E0003$Reverse&rarr; V0003 // V0002 &mdash;E0033$Reverse&rarr; V0003 // V0008 &mdash;E0013$Reverse&rarr; V0003 // V0007 &mdash;E0011$Reverse&rarr; V0003 // V0006 &mdash;E0039$Reverse&rarr; V0001]</P>
 
@@ -223,15 +256,15 @@ Temps de execució de la prova: 2.3e-05seg.</P>
 </div>
 <div class="test elemento" data-propiedades="correcta ">
 <hr>
-<a name="TEST_7">
-<h3>Prova Salesman Greedy graf20_100_4</h3>
+<a name="TEST_9">
+<h3>Prova Salesman Backtracking graf20_100_4</h3>
 </a>
 <p> Fitxer del graf: TestSalesMan\graf20_100_4.GR<br>
 Fitxer amb les visites: "TestSalesMan\\graf20_100_4.VIS"</p>
-Fitxer amb el cami correcte: "TestSalesMan\\graf20_100_4_Greedy.TRK"</p>
-<p> Temps de refèrencia: 5.2e-05seg.<br>
-Temps de execució máxim: 0.00052seg.<br>
-Temps de execució de la prova: 6.1e-05seg.</P>
+Fitxer amb el cami correcte: "TestSalesMan\\graf20_100_4.TRK"</p>
+<p> Temps de referència: 0.520657seg.<br>
+Temps de execució máxim: 5.20657seg.<br>
+Temps de execució de la prova: 0.165102seg.</P>
 <P><b>CAMI OK:</b> [V0018 &mdash;E0103$Reverse&rarr; V0018 // V0007 &mdash;E0015&rarr; V0018 // V0009 &mdash;E0173$Reverse&rarr; V0018 // V0017 &mdash;E0087&rarr; V0018 // V0002 &mdash;E0009&rarr; V0006]</P>
 <P><b>CAMI PRACTICA:</b> [V0018 &mdash;E0103$Reverse&rarr; V0018 // V0007 &mdash;E0015&rarr; V0018 // V0009 &mdash;E0173$Reverse&rarr; V0018 // V0017 &mdash;E0087&rarr; V0018 // V0002 &mdash;E0009&rarr; V0006]</P>
 
@@ -239,49 +272,33 @@ Temps de execució de la prova: 6.1e-05seg.</P>
 </div>
 <div class="test elemento" data-propiedades="correcta ">
 <hr>
-<a name="TEST_8">
-<h3>Prova Salesman Greedy graf30_300_8</h3>
-</a>
-<p> Fitxer del graf: TestSalesMan\graf30_300_8.GR<br>
-Fitxer amb les visites: "TestSalesMan\\graf30_300_8.VIS"</p>
-Fitxer amb el cami correcte: "TestSalesMan\\graf30_300_8_Greedy.TRK"</p>
-<p> Temps de refèrencia: 8.3e-05seg.<br>
-Temps de execució máxim: 0.00083seg.<br>
-Temps de execució de la prova: 0.000278seg.</P>
-<P><b>CAMI OK:</b> [V0012 &mdash;E0021$Reverse&rarr; V0012 // V0009 &mdash;E0401$Reverse&rarr; V0012 // V0015 &mdash;E0233$Reverse&rarr; V0012 // V0022 &mdash;E0519&rarr; V0012 // V0011 &mdash;E0313&rarr; V0012 // V0020 &mdash;E0145&rarr; V0012 // V0006 &mdash;E0437$Reverse&rarr; V0012 // V0024 &mdash;E0349&rarr; V0012 // V0008 &mdash;E0127$Reverse&rarr; V0021]</P>
-<P><b>CAMI PRACTICA:</b> [V0012 &mdash;E0021$Reverse&rarr; V0012 // V0009 &mdash;E0401$Reverse&rarr; V0012 // V0015 &mdash;E0233$Reverse&rarr; V0012 // V0022 &mdash;E0519&rarr; V0012 // V0011 &mdash;E0313&rarr; V0012 // V0020 &mdash;E0145&rarr; V0012 // V0006 &mdash;E0437$Reverse&rarr; V0012 // V0024 &mdash;E0349&rarr; V0012 // V0008 &mdash;E0127$Reverse&rarr; V0021]</P>
-
- <b>CORRECTE</b>
-</div>
-<div class="test elemento" data-propiedades="correcta ">
-<hr>
-<a name="TEST_9">
-<h3>Prova Salesman Greedy Graf50_200_6</h3>
+<a name="TEST_10">
+<h3>Prova Salesman Backtracking Graf50_200_6</h3>
 </a>
 <p> Fitxer del graf: TestSalesMan\Graf50_200_6.GR<br>
 Fitxer amb les visites: "TestSalesMan\\Graf50_200_6.VIS"</p>
-Fitxer amb el cami correcte: "TestSalesMan\\Graf50_200_6_Greedy.TRK"</p>
-<p> Temps de refèrencia: 3.7e-05seg.<br>
-Temps de execució máxim: 0.00037seg.<br>
-Temps de execució de la prova: 0.000105seg.</P>
-<P><b>CAMI OK:</b> [V0010 &mdash;E0111&rarr; V0010 // V0012 &mdash;E0113&rarr; V0010 // V0014 &mdash;E0045$Reverse&rarr; V0010 // V0019 &mdash;E0135&rarr; V0010 // V0007 &mdash;E0011$Reverse&rarr; V0010 // V0003 &mdash;E0007&rarr; V0010 // V0005 &mdash;E0077&rarr; V0012]</P>
-<P><b>CAMI PRACTICA:</b> [V0010 &mdash;E0111&rarr; V0010 // V0012 &mdash;E0113&rarr; V0010 // V0014 &mdash;E0045$Reverse&rarr; V0010 // V0019 &mdash;E0135&rarr; V0010 // V0007 &mdash;E0011$Reverse&rarr; V0010 // V0003 &mdash;E0007&rarr; V0010 // V0005 &mdash;E0077&rarr; V0012]</P>
+Fitxer amb el cami correcte: "TestSalesMan\\Graf50_200_6.TRK"</p>
+<p> Temps de referència: 0.542504seg.<br>
+Temps de execució máxim: 5.42504seg.<br>
+Temps de execució de la prova: 0.18269seg.</P>
+<P><b>CAMI OK:</b> [V0010 &mdash;E0161&rarr; V0010 // V0007 &mdash;E0011$Reverse&rarr; V0010 // V0003 &mdash;E0007&rarr; V0010 // V0005 &mdash;E0143$Reverse&rarr; V0010 // V0007 &mdash;E0135$Reverse&rarr; V0010 // V0019 &mdash;E0045&rarr; V0010 // V0014 &mdash;E0113$Reverse&rarr; V0012]</P>
+<P><b>CAMI PRACTICA:</b> [V0010 &mdash;E0161&rarr; V0010 // V0007 &mdash;E0143&rarr; V0010 // V0005 &mdash;E0007$Reverse&rarr; V0010 // V0003 &mdash;E0011&rarr; V0010 // V0007 &mdash;E0135$Reverse&rarr; V0010 // V0019 &mdash;E0045&rarr; V0010 // V0014 &mdash;E0113$Reverse&rarr; V0012]</P>
 
  <b>CORRECTE</b>
 </div>
 <div class="test elemento" data-propiedades="correcta ">
 <hr>
-<a name="TEST_10">
-<h3>Prova Salesman Greedy Graf50_200_7C</h3>
+<a name="TEST_11">
+<h3>Prova Salesman Backtracking Graf50_200_7C</h3>
 </a>
 <p> Fitxer del graf: TestSalesMan\Graf50_200_7C.GR<br>
 Fitxer amb les visites: "TestSalesMan\\Graf50_200_7C.VIS"</p>
-Fitxer amb el cami correcte: "TestSalesMan\\Graf50_200_7C_Greedy.TRK"</p>
-<p> Temps de refèrencia: 2.8e-05seg.<br>
-Temps de execució máxim: 0.00028seg.<br>
-Temps de execució de la prova: 4.8e-05seg.</P>
-<P><b>CAMI OK:</b> [V0001 &mdash;E0017&rarr; V0001 // V0010 &mdash;E0017$Reverse&rarr; V0001 &mdash;E0001&rarr; V0001 // V0002 &mdash;E0021$Reverse&rarr; V0001 // V0009 &mdash;E0015$Reverse&rarr; V0001 // V0004 &mdash;E0011&rarr; V0001 // V0007 &mdash;E0029&rarr; V0001 // V0002 &mdash;E0003&rarr; V0001 // V0003 &mdash;E0003$Reverse&rarr; V0001 // V0002 &mdash;E0001$Reverse&rarr; V0001]</P>
-<P><b>CAMI PRACTICA:</b> [V0001 &mdash;E0017&rarr; V0001 // V0010 &mdash;E0017$Reverse&rarr; V0001 &mdash;E0001&rarr; V0001 // V0002 &mdash;E0021$Reverse&rarr; V0001 // V0009 &mdash;E0015$Reverse&rarr; V0001 // V0004 &mdash;E0011&rarr; V0001 // V0007 &mdash;E0029&rarr; V0001 // V0002 &mdash;E0003&rarr; V0001 // V0003 &mdash;E0003$Reverse&rarr; V0001 // V0002 &mdash;E0001$Reverse&rarr; V0001]</P>
+Fitxer amb el cami correcte: "TestSalesMan\\Graf50_200_7C.TRK"</p>
+<p> Temps de referència: 0.433013seg.<br>
+Temps de execució máxim: 4.33013seg.<br>
+Temps de execució de la prova: 0.110754seg.</P>
+<P><b>CAMI OK:</b> [V0001 &mdash;E0001&rarr; V0001 // V0002 &mdash;E0003&rarr; V0001 // V0003 &mdash;E0037&rarr; V0001 // V0004 &mdash;E0011&rarr; V0001 // V0007 &mdash;E0035&rarr; V0001 // V0009 &mdash;E0021&rarr; V0001 // V0002 &mdash;E0001$Reverse&rarr; V0001 &mdash;E0017&rarr; V0001 // V0010 &mdash;E0017$Reverse&rarr; V0001]</P>
+<P><b>CAMI PRACTICA:</b> [V0001 &mdash;E0017&rarr; V0001 // V0010 &mdash;E0017$Reverse&rarr; V0001 &mdash;E0001&rarr; V0001 // V0002 &mdash;E0021$Reverse&rarr; V0001 // V0009 &mdash;E0035$Reverse&rarr; V0001 // V0007 &mdash;E0011$Reverse&rarr; V0001 // V0004 &mdash;E0037$Reverse&rarr; V0001 // V0003 &mdash;E0003$Reverse&rarr; V0001 // V0002 &mdash;E0001$Reverse&rarr; V0001]</P>
 
  <b>CORRECTE</b>
 </div>

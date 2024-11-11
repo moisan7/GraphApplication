@@ -7,19 +7,21 @@
 #include <cmath>
 
 // Declaration of global variables
-CVertex* destinationVertex;                      // Target destination vertex for TSP
+CVertex* destinationVertex;                      // Target destination vertex for the TSP
 CTrack optimalSolution(NULL);                    // Stores the optimal solution path
 CVisits visitList(NULL);                         // List of vertices to visit
 double shortestPathLength = std::numeric_limits<double>::max(); // Shortest path length found
 double currentPathLength = 0.0;                  // Current path length
-list<CVertex*> orderedVertices;                  // Ordered list of vertices
-list<CVertex*> unorderedVertices;                // Unordered list of vertices
+std::list<CVertex*> orderedVertices;             // Ordered list of vertices
+std::list<CVertex*> unorderedVertices;           // Unordered list of vertices
+
+// Struct to represent a node in the path
 struct PathNode {
-    CEdge* edge;
-    PathNode* previousNode;
+    CEdge* edge;                                 // Edge to the current vertex
+    PathNode* previousNode;                      // Previous node in the path
 };
 
-// Forward declarations
+// Forward declarations of functions
 void recursiveBacktracking(PathNode* previousNode, CVertex* currentVertex);
 bool allVerticesVisited();
 
@@ -38,7 +40,7 @@ bool allVerticesVisited() {
     return true;
 }
 
-// Backtracking solution for TSP
+// Backtracking solution for the Traveling Salesman Problem (TSP)
 CTrack SalesmanTrackBacktracking(CGraph& graph, CVisits& visits) {
     visitList = visits;
     currentPathLength = 0.0;
@@ -91,21 +93,22 @@ void recursiveBacktracking(PathNode* previousNode, CVertex* currentVertex) {
     }
 }
 
-// ============================
+// ==============================================
 // Greedy + Backtracking TSP Solution
-// ============================
+// ==============================================
 
+// Struct to hold distance information for greedy search
 struct DistanceMatrixElement {
-    double distance;
-    list<CEdge*> pathEdges;
+    double distance;                              // Distance between vertices
+    std::list<CEdge*> pathEdges;                  // Edges forming the path
 };
 
 // Greedy search variables
-DistanceMatrixElement distanceMatrix[20][20];
-int pathOrder[20];
-int bestPathOrder[20];
-double bestGreedyPathLength = std::numeric_limits<double>::max();
-double currentGreedyPathLength = 0.0;
+DistanceMatrixElement distanceMatrix[20][20];    // Distance matrix
+int pathOrder[20];                               // Current path order
+int bestPathOrder[20];                           // Best path order found
+double bestGreedyPathLength = std::numeric_limits<double>::max(); // Best path length found
+double currentGreedyPathLength = 0.0;            // Current path length
 
 // Recursive function to find the shortest path using a greedy approach
 void greedyBacktrackingRec(int depth) {
@@ -118,8 +121,7 @@ void greedyBacktrackingRec(int depth) {
             std::copy(std::begin(pathOrder), std::end(pathOrder), std::begin(bestPathOrder));
         }
         currentGreedyPathLength -= fabs(distanceMatrix[pathOrder[depth - 1]][pathOrder[depth]].distance);
-    }
-    else {
+    } else {
         for (int j = 1; j < orderedVertices.size() - 1; j++) {
             bool isInPath = false;
             for (int k = 1; k < depth && !isInPath; k++) {
@@ -140,6 +142,7 @@ CTrack SalesmanTrackBacktrackingGreedy(CGraph& graph, CVisits& visits) {
     orderedVertices = visits.m_Vertices;
     unorderedVertices = orderedVertices;
 
+    // Initialize distance matrix using Dijkstra's algorithm for all vertices
     int i = 0;
     for (CVertex* startVertex : orderedVertices) {
         Dijkstra(graph, startVertex);
@@ -157,7 +160,7 @@ CTrack SalesmanTrackBacktrackingGreedy(CGraph& graph, CVisits& visits) {
 
     bestGreedyPathLength = std::numeric_limits<double>::max();
     currentGreedyPathLength = 0.0;
-    pathOrder[0] = 0;
+    pathOrder[0] = 0;   
     pathOrder[orderedVertices.size() - 1] = orderedVertices.size() - 1;
     greedyBacktrackingRec(1);
 
