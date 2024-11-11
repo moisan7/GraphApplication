@@ -470,6 +470,10 @@ public:
 	CTrack(CGraph* pGraph) {
 		m_pGraph = pGraph;
 	}
+	CTrack(CGraph* pGraph, list<CEdge*> Edges) {
+		m_pGraph = pGraph;
+		m_Edges = Edges;
+	}
 	void SetGraph(CGraph* pGraph) {
 		Clear();
 		m_pGraph = pGraph;
