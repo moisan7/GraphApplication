@@ -1,3 +1,6 @@
+// AssertsMaximFluxe.cpp : Este archivo contiene la función "main". La ejecución del programa comienza y termina ahí.
+//
+
 #pragma once
 
 #include <stdlib.h>
@@ -17,7 +20,7 @@ using namespace std;
 // =============================================================================
 
 /*
-template<class T> T max(T a, T b) 
+template<class T> T max(T a, T b)
 {
 	if (a > b) return a;
 	else return b;
@@ -37,7 +40,7 @@ string StrPrint(const char* Format, ...);
 // DEBUG =======================================================================
 // =============================================================================
 
-bool MyAssertFun(const char*strcond, const char*FileName, int line, const char*Msg = NULL);
+bool MyAssertFun(const char* strcond, const char* FileName, int line, const char* Msg = NULL);
 
 #ifdef NDEBUG
 #define MyAssert(cond)
@@ -56,9 +59,9 @@ private:
 	char m_Message[256];
 public:
 	MyException() {}
-	MyException(const char *Format, ...);
+	MyException(const char* Format, ...);
 	MyException(const MyException& rhs);
-	virtual const char *what() const throw() { return m_Message; }
+	virtual const char* what() const throw() { return m_Message; }
 };
 
 
@@ -74,32 +77,32 @@ public:
 
 	CGPoint() : m_X(0.0), m_Y(0.0) {}
 	CGPoint(const double x, const double y = 0) : m_X(x), m_Y(y) {}
-	CGPoint(const CGPoint&p) : m_X(p.m_X), m_Y(p.m_Y) {}
+	CGPoint(const CGPoint& p) : m_X(p.m_X), m_Y(p.m_Y) {}
 	//CGPoint(const CPoint &p) : m_X(p.x), m_Y(p.y) {}
 	//operator CPoint() { return CPoint(int(m_X), int(m_Y)); }
-	CGPoint& operator=(const CGPoint &p) {
+	CGPoint& operator=(const CGPoint& p) {
 		m_X = p.m_X;
 		m_Y = p.m_Y;
 		return *this;
 	}
-	CGPoint operator+(const CGPoint &p2)  const {
+	CGPoint operator+(const CGPoint& p2)  const {
 		return CGPoint(m_X + p2.m_X, m_Y + p2.m_Y);
 	}
-	CGPoint operator+=(const CGPoint &p2) {
+	CGPoint operator+=(const CGPoint& p2) {
 		m_X += p2.m_X;
 		m_Y += p2.m_Y;
 		return *this;
 	}
-	CGPoint operator-(const CGPoint &p2)  const {
+	CGPoint operator-(const CGPoint& p2)  const {
 		return CGPoint(m_X - p2.m_X, m_Y - p2.m_Y);
 	}
-	CGPoint operator-=(const CGPoint &p2) {
+	CGPoint operator-=(const CGPoint& p2) {
 		m_X -= p2.m_X;
 		m_Y -= p2.m_Y;
 		return *this;
 	}
 	CGPoint operator*(const double n) {
-		return CGPoint(m_X*n,m_Y*n);
+		return CGPoint(m_X * n, m_Y * n);
 	}
 	CGPoint operator*=(const double n) {
 		m_X *= n;
@@ -107,7 +110,7 @@ public:
 		return *this;
 	}
 	CGPoint operator/(const double n) {
-		return CGPoint(m_X/n, m_Y/n);
+		return CGPoint(m_X / n, m_Y / n);
 	}
 	CGPoint operator/=(const double n) {
 		m_X /= n;
@@ -117,7 +120,7 @@ public:
 	CGPoint operator-()  const {
 		return CGPoint(-m_X, -m_Y);
 	}
-	double operator*(const CGPoint &p2)  const {
+	double operator*(const CGPoint& p2)  const {
 		return m_X * p2.m_X + m_Y * p2.m_Y;
 	}
 	bool operator==(const CGPoint& p)  const {
@@ -126,17 +129,17 @@ public:
 	bool operator!=(const CGPoint& p)  const {
 		return m_X != p.m_X || m_Y != p.m_Y;
 	}
-	double Module() const { return sqrt(m_X*m_X + m_Y * m_Y); }
-	double Distance(const CGPoint &p2) const { return sqrt((m_X - p2.m_X)*(m_X - p2.m_X) + (m_Y - p2.m_Y)*(m_Y - p2.m_Y)); }
+	double Module() const { return sqrt(m_X * m_X + m_Y * m_Y); }
+	double Distance(const CGPoint& p2) const { return sqrt((m_X - p2.m_X) * (m_X - p2.m_X) + (m_Y - p2.m_Y) * (m_Y - p2.m_Y)); }
 	double Distance2(const CGPoint& p2) const { return (m_X - p2.m_X) * (m_X - p2.m_X) + (m_Y - p2.m_Y) * (m_Y - p2.m_Y); }
 };
 
 inline CGPoint operator*(double v, const CGPoint& p) {
-	return CGPoint(v*p.m_X, v*p.m_Y);
+	return CGPoint(v * p.m_X, v * p.m_Y);
 }
 
 inline CGPoint operator*(const CGPoint& p, double v) {
-	return CGPoint(v*p.m_X, v*p.m_Y);
+	return CGPoint(v * p.m_X, v * p.m_Y);
 }
 
 inline CGPoint operator/(const CGPoint& p, double v) {
@@ -165,14 +168,14 @@ public:
 	CGPoint m_P0;
 	CGPoint m_P1;
 	explicit CGRect(double x0, double y0, double x1, double y1) : m_P0(x0, y0), m_P1(x1, y1) {}
-	explicit CGRect(const CGPoint &p0, const CGPoint &p1) : m_P0(p0), m_P1(p1) {}
+	explicit CGRect(const CGPoint& p0, const CGPoint& p1) : m_P0(p0), m_P1(p1) {}
 	CGRect() {}
-	CGRect(const CGRect &r) {
+	CGRect(const CGRect& r) {
 		m_P0 = r.m_P0;
 		m_P1 = r.m_P1;
 	}
 #ifdef _MFC_VER
-	CGRect(const CRect &r) {
+	CGRect(const CRect& r) {
 		m_P0.m_X = r.left;
 		m_P0.m_Y = r.top;
 		m_P1.m_X = r.right;
@@ -182,7 +185,7 @@ public:
 		return CRect(int(m_P0.m_X), int(m_P0.m_Y), int(m_P1.m_X), int(m_P1.m_Y));
 	}
 #endif
-	CGRect& operator=(const CGRect &r) {
+	CGRect& operator=(const CGRect& r) {
 		m_P0 = r.m_P0;
 		m_P1 = r.m_P1;
 		return *this;
@@ -197,7 +200,7 @@ public:
 		return m_P0.m_X > m_P1.m_X ||
 			m_P0.m_Y > m_P1.m_Y;
 	}
-	CGRect operator|(const CGRect &r) const {
+	CGRect operator|(const CGRect& r) const {
 		if (EmptyP()) return r;
 		else if (r.EmptyP()) return *this;
 		else return CGRect(
@@ -206,7 +209,7 @@ public:
 			max(m_P1.m_X, r.m_P1.m_X),
 			max(m_P1.m_Y, r.m_P1.m_Y));
 	}
-	CGRect &operator|=(const CGRect &r) {
+	CGRect& operator|=(const CGRect& r) {
 		if (EmptyP()) *this = r;
 		else if (r.EmptyP());
 		else *this = CGRect(
@@ -216,14 +219,14 @@ public:
 			max(m_P1.m_Y, r.m_P1.m_Y));
 		return *this;
 	}
-	CGRect operator&(const CGRect &r) const {
+	CGRect operator&(const CGRect& r) const {
 		return CGRect(
 			max(m_P0.m_X, r.m_P0.m_X),
 			max(m_P0.m_Y, r.m_P0.m_Y),
 			min(m_P1.m_X, r.m_P1.m_X),
 			min(m_P1.m_Y, r.m_P1.m_Y));
 	}
-	CGRect &operator&=(const CGRect &r) {
+	CGRect& operator&=(const CGRect& r) {
 		*this = CGRect(
 			max(m_P0.m_X, r.m_P0.m_X),
 			max(m_P0.m_Y, r.m_P0.m_Y),
@@ -251,7 +254,7 @@ public:
 	}
 
 	// Las medidas de ancho, alto y area
-	double Area() const { return (m_P1.m_X - m_P0.m_X)*(m_P1.m_Y - m_P0.m_Y); }
+	double Area() const { return (m_P1.m_X - m_P0.m_X) * (m_P1.m_Y - m_P0.m_Y); }
 	double Width() const { return m_P1.m_X - m_P0.m_X; }
 	double Height() const { return m_P1.m_Y - m_P0.m_Y; }
 	bool operator==(const CGRect& r)  const {
@@ -262,7 +265,7 @@ public:
 	}
 };
 
-inline ostream& operator<< (ostream& s, const CGRect &r) {
+inline ostream& operator<< (ostream& s, const CGRect& r) {
 	s << "(" << r.m_P0 << "-" << r.m_P1 << ")";
 	return s;
 }
@@ -286,7 +289,7 @@ class CVertex {
 public:
 	// Atributs generals de CVertex
 	string m_Name; // Nom del vertex
-	CGPoint m_Point; 
+	CGPoint m_Point;
 	COLORREF m_Color;
 	list<CEdge*> m_Edges;
 	// Atributos de Dijkstra
@@ -301,17 +304,13 @@ public:
 	bool m_Marca;
 	// TrobaCami
 	bool m_JaHePassat;
-	// Contador de visites realitzades a aquest vertex
-	int m_visitCount;
-	// index dins de matrius temporals (per exemple utilitzada en backtracking)
-	int m_indexMatrix;
 
 	// Métodes
 	CEdge* FindEdge(const char* name);
-	bool MemberP(CEdge *pEdge);
+	bool MemberP(CEdge* pEdge);
 	bool NeighbordP(CVertex* pVertex);
-	void Unlink(CEdge *pEdge);
-	void ResetColor() {	m_Color = RGB(0, 128, 128);	}
+	void Unlink(CEdge* pEdge);
+	void ResetColor() { m_Color = RGB(0, 128, 128); }
 	void SetColor(COLORREF color) { m_Color = color; }
 	CVertex(const char* name, double x, double y)
 		: m_Name(name)
@@ -381,33 +380,33 @@ public:
 	void ResetColor();
 
 	// Vertices
-	CVertex* NewVertex(const char *name, double x, double y);
-	CVertex* NewVertex(const CGPoint &point);
-	void DeleteVertex(CVertex *pVertex);
-	CVertex* FindVertex(const char *name);
-	CVertex* FindVertex(const CGPoint &point, double radius);
-	CVertex* GetVertex(const char *name);
+	CVertex* NewVertex(const char* name, double x, double y);
+	CVertex* NewVertex(const CGPoint& point);
+	void DeleteVertex(CVertex* pVertex);
+	CVertex* FindVertex(const char* name);
+	CVertex* FindVertex(const CGPoint& point, double radius);
+	CVertex* GetVertex(const char* name);
 	CVertex* GetVertex(const int index);
 	int GetVertexIndex(const CVertex* pVertex);
 
-	bool MemberP(CVertex *pVertex);
+	bool MemberP(CVertex* pVertex);
 	size_t GetNVertices() { return m_Vertices.size(); }
 
 	// Edges
 	CEdge* NewEdge(const char* name, double value, const char* originName, const char* destionatioName);
 	CEdge* NewEdge(const char* name, double value, CVertex* pOrigin, CVertex* pDestination);
-	CEdge* NewEdge(CVertex *pOrigin, CVertex* pDestination);
-	void DeleteEdge(CEdge *pEdge);
+	CEdge* NewEdge(CVertex* pOrigin, CVertex* pDestination);
+	void DeleteEdge(CEdge* pEdge);
 	CEdge* FindEdge(CVertex* pVOrigin, CVertex* pVDestination);
 	CEdge* FindEdge(const char* name);
-	CEdge* FindEdge(const CGPoint &point, double radius);
+	CEdge* FindEdge(const CGPoint& point, double radius);
 	bool MemberP(CVertex* pVOrigin, CVertex* pVDestination) { return FindEdge(pVOrigin, pVDestination) != NULL; }
-	bool MemberP(CEdge *pEdge);
+	bool MemberP(CEdge* pEdge);
 	size_t GetNEdges() { return m_Edges.size(); }
 	void SetDistancesToEdgeLength();
 
 	// Background
-	void SetBackground(const char*filename);
+	void SetBackground(const char* filename);
 	CVImage* GetBackgroundImage() {
 		return m_pBackground;
 	}
@@ -429,7 +428,9 @@ public:
 	//CMaxFlow ReadMaxFlow(const char* filename);
 };
 
+// =============================================================================
 // CVisits =====================================================================
+// =============================================================================
 
 class CVisits {
 public:
