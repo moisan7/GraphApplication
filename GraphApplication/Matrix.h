@@ -16,12 +16,12 @@ public:
 		assert(columns > 0);
 		m_Columns = columns;
 		m_Rows = rows;
-		m_pElements = new Element[m_Columns * m_Rows];
+		m_pElements = new Element[m_Columns * m_Rows](); // Value initialization
 	}
-	Matrix(const Matrix& obj) : m_Columns(obj.m_Columnes), m_Rows(obj.m_Rows) {
+	Matrix(const Matrix& obj) : m_Columns(obj.m_Columns), m_Rows(obj.m_Rows) {
 		m_pElements = new Element[m_Rows * m_Columns];
-		for (int i = 0; i < m_Rows; ++i) {
-			for (int j = 0; j < m_Columns; ++j) {
+		for (size_t i = 0; i < m_Rows; ++i) {
+			for (size_t j = 0; j < m_Columns; ++j) {
 				(*this)(i, j) = obj(i, j);
 			}
 		}
@@ -29,11 +29,12 @@ public:
 	Matrix& operator=(const Matrix& obj) {
 		assert(m_Rows == obj.m_Rows);
 		assert(m_Columns == obj.m_Columns);
-		for (int i = 0; i < m_Rows; ++i) {
-			for (int j = 0; j < m_Columns; ++j) {
+		for (size_t i = 0; i < m_Rows; ++i) {
+			for (size_t j = 0; j < m_Columns; ++j) {
 				(*this)(i, j) = obj(i, j);
 			}
 		}
+		return *this;
 	}
 	~Matrix() {
 		if (m_pElements) delete[] m_pElements;
@@ -42,6 +43,7 @@ public:
 		if (m_pElements) delete[] m_pElements;
 		m_Rows = 0;
 		m_Columns = 0;
+		m_pElements = nullptr;
 	}
 	void Resize(size_t rows, size_t columns) {
 		assert(rows > 0);
@@ -49,7 +51,7 @@ public:
 		Clean();
 		m_Columns = columns;
 		m_Rows = rows;
-		m_pElements = new Element[rows * columns];
+		m_pElements = new Element[rows * columns](); // Value initialization
 	}
 	Element& operator()(int i, int j) const {
 		assert(i >= 0);
@@ -64,9 +66,9 @@ public:
 
 template<class Element>
 ostream& operator<<(ostream& out, const Matrix<Element>& m) {
-	for (int i = 0; i < m.GetRows(); ++i) {
+	for (size_t i = 0; i < m.GetRows(); ++i) {
 		out << endl;
-		for (int j = 0; j < m.GetColumns(); ++j) {
+		for (size_t j = 0; j < m.GetColumns(); ++j) {
 			if (j > 0) out << ' ';
 			out << m(i, j);
 		}

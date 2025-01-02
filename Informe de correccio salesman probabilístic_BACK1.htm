@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Informe de correcció SALESMAN_PROBABILISTIC</title>
+<link href="https://fonts.cdnfonts.com/css/neue-haas-grotesk-display-pro" rel="stylesheet">
+<link rel="shortcut icon" href="https://www.uab.cat/Xcelerate/WAI/img/simbol.png">
+</head>
+<style>body{padding:0;margin:0;font-family:'Neue Haas Grotesk Display Pro',sans-serif;background-color:#e9e9e9}.capcal-nav .portada{font-family:neue-haas-grotesk-display,Helvetica,Arial,sans-serif;font-size:1.4rem;letter-spacing:.05rem;color:#111;font-weight:500;line-height:1.5;box-sizing:inherit;border-radius:0}.portada .logo-uab{position:relative;height:8rem;width:35rem;margin:-1.5rem auto 1.5rem;top:0;left:0}.logo-uab{max-width:1250px;right:0;margin-top:20px!important;border-radius:0;box-sizing:inherit}.logo-uab h1{height:100%;margin-top:0;margin-bottom:.75rem;font-weight:600;line-height:1.2;border-radius:0}.portada .logo-uab a{background-image:url(https://www.uab.cat/Xcelerate/WAI/img/UAB-2linies-verd.svg);background-size:auto;width:100%;height:100%;background-position:center}.logo-uab a{margin-left:0;display:block;background-repeat:no-repeat;margin-top:.5rem;text-indent:100%;white-space:nowrap;overflow:hidden;color:hsl(220deg,50%,45%);text-decoration:none;background-color:transparent;transition:all .25s ease;border-radius:0;box-sizing:inherit}.menu{background-color:#007e12;margin:0;display:block;overflow:auto;color:#fff}.menu .derecha{width:40%;float:left}.menu .izquierda{margin-left:2%;width:58%;float:left}.menu h1{font-weight:600;font-size:30px}.menu p{font-size:20px;font-weight:500}.menu span{font-weight:590}.resultado{min-height:40px;width:100%;background-color:#e9e9e9;display:flex;flex-direction:column;padding-bottom:5px}.resultado p{font-size:20px;color:#313236;font-weight:500;margin:0;padding:0;padding-top:10px;padding-left:20px}.fitxersEnviatsAlServidor{margin-left:20px}.descripcioDeLaCorreccio{margin-left:20px}.descripcioDeLaCorreccio pre{font-family:'Neue Haas Grotesk Display Pro',sans-serif}.listaPruebas{margin-left:20px}.listaPruebas .tituloLista{margin-left:5px}.listaPruebas .descripcion{font-weight:550}.listaPruebas .incorrecto{color:red}.listaPruebas .correcto{color:#007e12}.listaPruebas ul{margin-top:-10px}.listaPruebas li:hover{animation-name:crecer;animation-duration:.2s;animation-fill-mode:forwards}@keyframes crecer{from{font-size:16px}to{font-size:18px}}.listaPruebas button{transition:all .5s ease;margin-left:25px;margin-bottom:20px;background-color:#007e12;border:1px solid #d5d9d9;border-radius:8px;box-shadow:rgba(213,217,217,.5) 0 2px 5px 0;box-sizing:border-box;color:#fff;cursor:pointer;display:inline-block;font-family:"Amazon Ember",sans-serif;font-size:13px;line-height:29px;padding:0 10px 0 11px;position:relative;text-align:center;text-decoration:none;user-select:none;-webkit-user-select:none;touch-action:manipulation;vertical-align:middle;min-width:100px}.listaPruebas .boton:hover{transform:scale(1.2) perspective(1px)}.listaPruebas .boton.active{background-color:#f7fafa;border-color:#008296;color:#000;box-shadow:rgba(213,217,217,.5) 0 2px 5px 0;outline:0}.listaPruebas li::marker{content:'\25BA';color:#007e12}.listaPruebas a:link{text-decoration:none;color:inherit}.listaPruebas a:hover{animation-name:aclarar;animation-duration:.2s;animation-fill-mode:forwards}@keyframes aclarar{from{color:#000}to{color:#666}}.listaPruebas a:visited{text-decoration:none;color:inherit}.test{margin-left:20px}.test .sortida{margin-left:10px}.test hr{margin-left:-20px}.test span{font-weight:530}.test pre{margin-left:10px;font-family:'Fira Code',monospace;font-size:14px}.pieDePagina{background-color:#004b0a;min-height:100px;width:100%;margin:0;margin-top:20px;color:#fff;bottom:0}.pieDePagina .derecha{height:inherit;width:40%;float:left}.pieDePagina .izquierda{margin-left:2%;height:inherit;width:58%;float:left}.pieDePagina span{font-weight:590;color:#fff}.pieDePagina li{color:rgba(255,255,255,.75);font-weight:600;margin-left:20px}.pieDePagina h3{margin-bottom:-15px}hr{border:0;height:1px;background:#333;background-image:linear-gradient(to right,#ccc,#004b0a,#ccc);margin-top:2%}div.codigo:not(.copiado1,.copiado2,.copiado3,.copiado4,.copiado5){overflow-x:scroll;background-color:#272822}div.code{white-space:pre}.codigo{display:flex}</style>
+<body>
+<div class="capcal-nav portada">
+<div class="logo-uab">
+<h1>
+<a href="https://www.uab.cat/web/universitat-autonoma-de-barcelona-1345467950436.html">Universitat Autónoma de Barcelona</a>
+</h1>
+</div>
+</div>
+<div class="menu">
+<div class="izquierda">
+<h1>Informe de correcció SALESMAN_PROBABILISTIC</h1>
+<p><span>Assignatura:</span>Anàlisis i Diseny d'Algorismes (ADA) </p>
+<h3>Demanat per:</h3>
+<ul>
+<li>1603611 SÁNCHEZ PIN, Moisés Moises.SanchezP@autonoma.cat</li>
+</ul>
+</div>
+<div class="derecha">
+<p style="margin-top: 25px;"><span>Data:</span>Thu Jan  2 19:15:29 2025
+</p>
+<p style="margin-top: 25px;"><span>Corrector:</span>SALESMAN_PROBABILISTIC (SALESMAN_PROBABILISTIC)</p>
+<h3>Autors:</h3>
+<ul>
+<li>1603611 SÁNCHEZ PIN, Moisés Moises.SanchezP@autonoma.cat</li>
+</ul>
+</div>
+</div>
+<div class="resultado">
+<p><span>Probabilístic </span><span id="nota">6.8</span></p>
+<script>
+const notas = document.querySelectorAll("#nota");
+notas.forEach(nota => {
+const valor = parseInt(nota.textContent);
+if (valor >= 5) {
+nota.style.color = "green";
+} else {
+nota.style.color = "red";
+}
+});
+</script>
+</div>
+<div class="fitxersEnviatsAlServidor">
+<h3>Fitxers enviats al servidor:</h3><ul><li>x64\Release\GraphApplication.exe</li>
+<li>GraphApplication\GraphApplication.cpp</li>
+<li>GraphApplication\Graph.h</li>
+<li>GraphApplication\Probabilistic.cpp</li>
+</ul>
+</div>
+<div class="descripcioDeLaCorreccio">
+<h3>Descripció de la correcció</h3>
+<BR>
+</div>
+<div class="listaPruebas">
+<h3>Filtres de proves:</h3>
+<button class="boton" data-propiedad="correcta" onclick="toggleVisibility(this)" role="button">Correctes</button>
+<button class="boton" data-propiedad="incorrecta" onclick ="toggleVisibility(this)" role="button">Incorrectes</button>
+<script>
+function toggleVisibility(button) {
+var elementos = document.getElementsByClassName('elemento');
+var botones = document.getElementsByTagName('button');
+button.classList.toggle('active');
+var botonesActivos = [];
+for (var i = 0; i < botones.length; i++) {
+if (botones[i].classList.contains('active')) {
+botonesActivos.push(botones[i]);
+}
+}
+for (var i = 0; i < elementos.length; i++) {
+var propiedades = elementos[i].getAttribute('data-propiedades').split(' ');
+var mostrar = true;
+for (var j = 0; j < botonesActivos.length; j++) {
+var propiedadBoton = botonesActivos[j].getAttribute('data-propiedad');
+if (propiedades.includes(propiedadBoton)) {
+mostrar = false;
+break;
+}
+}
+elementos[i].hidden = !mostrar;
+}
+}
+</script>
+<h3>Llista de proves:</h3>
+<ul>
+<li class="elemento" data-propiedades="correcta  "><span class="tituloLista"><a href="#TEST_1">Prova Salesman ProbabiísticSimple<span class = "descripcion">:</span></a></span><span class="correcto"> Correcte</span></li>
+<li class="elemento" data-propiedades="correcta  "><span class="tituloLista"><a href="#TEST_2">Prova Salesman ProbabiísticGreedyNoOptimo<span class = "descripcion">:</span></a></span><span class="correcto"> Correcte</span></li>
+<li class="elemento" data-propiedades="correcta  "><span class="tituloLista"><a href="#TEST_3">Prova Salesman ProbabiísticRepeatVertex<span class = "descripcion">:</span></a></span><span class="correcto"> Correcte</span></li>
+<li class="elemento" data-propiedades="correcta  "><span class="tituloLista"><a href="#TEST_4">Prova Salesman ProbabiísticAfterEnd<span class = "descripcion">:</span></a></span><span class="correcto"> Correcte</span></li>
+<li class="elemento" data-propiedades="correcta  "><span class="tituloLista"><a href="#TEST_5">Prova Salesman ProbabiísticGraf10_20_3<span class = "descripcion">:</span></a></span><span class="correcto"> Correcte</span></li>
+<li class="elemento" data-propiedades="incorrecta  "><span class="tituloLista"><a href="#TEST_6">Prova Salesman ProbabiísticGraf10_20_5<span class = "descripcion">:</span></a></span><span class="incorrecto"> Falla amb 1 errors</span></li>
+<li class="elemento" data-propiedades="correcta  "><span class="tituloLista"><a href="#TEST_7">Prova Salesman ProbabiísticGraf10_20_6<span class = "descripcion">:</span></a></span><span class="correcto"> Correcte</span></li>
+<li class="elemento" data-propiedades="correcta  "><span class="tituloLista"><a href="#TEST_8">Prova Salesman ProbabiísticGraf10_40_4<span class = "descripcion">:</span></a></span><span class="correcto"> Correcte</span></li>
+<li class="elemento" data-propiedades="correcta  "><span class="tituloLista"><a href="#TEST_9">Prova Salesman Probabiísticgraf20_100_4<span class = "descripcion">:</span></a></span><span class="correcto"> Correcte</span></li>
+<li class="elemento" data-propiedades="correcta  "><span class="tituloLista"><a href="#TEST_10">Prova Salesman Probabiísticgraf30_300_8<span class = "descripcion">:</span></a></span><span class="correcto"> Correcte</span></li>
+<li class="elemento" data-propiedades="correcta  "><span class="tituloLista"><a href="#TEST_11">Prova Salesman ProbabiísticGraf50_200_6<span class = "descripcion">:</span></a></span><span class="correcto"> Correcte</span></li>
+<li class="elemento" data-propiedades="correcta  "><span class="tituloLista"><a href="#TEST_12">Prova Salesman ProbabiísticGraf50_200_7C<span class = "descripcion">:</span></a></span><span class="correcto"> Correcte</span></li>
+<li class="elemento" data-propiedades="correcta  "><span class="tituloLista"><a href="#TEST_13">Prova Salesman ProbabiísticGraf100_200_17<span class = "descripcion">:</span></a></span><span class="correcto"> Correcte</span></li>
+<li class="elemento" data-propiedades="correcta  "><span class="tituloLista"><a href="#TEST_14">Prova Salesman ProbabiísticGraf100_200_18<span class = "descripcion">:</span></a></span><span class="correcto"> Correcte</span></li>
+<li class="elemento" data-propiedades="correcta  "><span class="tituloLista"><a href="#TEST_15">Prova Salesman ProbabiísticGraf100_200_19<span class = "descripcion">:</span></a></span><span class="correcto"> Correcte</span></li>
+<li class="elemento" data-propiedades="correcta  "><span class="tituloLista"><a href="#TEST_16">Prova Salesman ProbabiísticGraf100_200_21<span class = "descripcion">:</span></a></span><span class="correcto"> Correcte</span></li>
+<li class="elemento" data-propiedades="correcta  "><span class="tituloLista"><a href="#TEST_17">Prova Salesman ProbabiísticGraf50_300_20<span class = "descripcion">:</span></a></span><span class="correcto"> Correcte</span></li>
+<li class="elemento" data-propiedades="correcta  "><span class="tituloLista"><a href="#TEST_18">Prova Salesman ProbabiísticGraf100_200_22<span class = "descripcion">:</span></a></span><span class="correcto"> Correcte</span></li>
+<li class="elemento" data-propiedades="incorrecta  "><span class="tituloLista"><a href="#TEST_19">Prova Salesman ProbabiísticGraf100_200_23<span class = "descripcion">:</span></a></span><span class="incorrecto"> Falla amb 1 errors</span></li>
+<li class="elemento" data-propiedades="incorrecta  "><span class="tituloLista"><a href="#TEST_20">Prova Salesman ProbabiísticGraf100_200_24<span class = "descripcion">:</span></a></span><span class="incorrecto"> Falla amb 1 errors</span></li>
+</ul>
+<script>
+function mostrarElementos(clase) {
+var elementos = document.getElementsByClassName(clase);
+for (var i = 0; i < elementos.length; i++) {
+var liElemento = elementos[i].closest('li');
+var aDestino = liElemento.querySelector('a');
+var aReferencia = aDestino.href;
+var aSeccion = document.getElementsByName(aReferencia.split('#')[1]);
+var padre = aSeccion[0].parentNode;
+if (liElemento.style.display === 'none') {
+liElemento.style.display = 'list-item';
+padre.style.display = 'block';
+} else {
+liElemento.style.display = 'none';
+padre.style.display = 'none';
+}
+}
+}
+</script>
+</div>
+<div class="tests">
+<div class="test elemento" data-propiedades="correcta ">
+<hr>
+<a name="TEST_1">
+<h3>Prova Salesman ProbabiísticSimple</h3>
+</a>
+<p> Fitxer del graf: TestSalesMan\Simple.GR<br>
+Fitxer amb les visites: "TestSalesMan\\Simple.VIS"</p>
+Fitxer amb el cami correcte: "TestSalesMan\\Simple.TRK"</p>
+<p> Temps de referència: 0.0215203seg.<br>
+Temps d'execució máxim: 0.0860812seg.<br>
+Temps d'execució de la prova: 0.001814seg.</P>
+<P><b>CAMI OK:</b> [V0001 &mdash;E0005&rarr; V0002]</P>
+<P><b>CAMI PRACTICA:</b> [V0001 &mdash;E0005&rarr; V0002]</P>
+
+ <b>CORRECTE</b>
+</div>
+<div class="test elemento" data-propiedades="correcta ">
+<hr>
+<a name="TEST_2">
+<h3>Prova Salesman ProbabiísticGreedyNoOptimo</h3>
+</a>
+<p> Fitxer del graf: TestSalesMan\GreedyNoOptimo.GR<br>
+Fitxer amb les visites: "TestSalesMan\\GreedyNoOptimo.VIS"</p>
+Fitxer amb el cami correcte: "TestSalesMan\\GreedyNoOptimo.TRK"</p>
+<p> Temps de referència: 0.161174seg.<br>
+Temps d'execució máxim: 0.644696seg.<br>
+Temps d'execució de la prova: 0.0227535seg.</P>
+<P><b>CAMI OK:</b> [V0001 &mdash;E0017&rarr; V0001 // V0006 &mdash;E0017$Reverse&rarr; V0001 &mdash;E0019&rarr; V0001 // V0002 &mdash;E0021&rarr; V0001 // V0003 &mdash;E0023&rarr; V0001 // V0004 &mdash;E0013&rarr; V0001 // V0009 &mdash;E0015&rarr; V0005]</P>
+<P><b>CAMI PRACTICA:</b> [V0001 &mdash;E0017&rarr; V0001 // V0006 &mdash;E0017$Reverse&rarr; V0001 &mdash;E0019&rarr; V0001 // V0002 &mdash;E0021&rarr; V0001 // V0003 &mdash;E0023&rarr; V0001 // V0004 &mdash;E0013&rarr; V0001 // V0009 &mdash;E0015&rarr; V0005]</P>
+
+ <b>CORRECTE</b>
+</div>
+<div class="test elemento" data-propiedades="correcta ">
+<hr>
+<a name="TEST_3">
+<h3>Prova Salesman ProbabiísticRepeatVertex</h3>
+</a>
+<p> Fitxer del graf: TestSalesMan\RepeatVertex.GR<br>
+Fitxer amb les visites: "TestSalesMan\\RepeatVertex.VIS"</p>
+Fitxer amb el cami correcte: "TestSalesMan\\RepeatVertex.TRK"</p>
+<p> Temps de referència: 0.484035seg.<br>
+Temps d'execució máxim: 1.93614seg.<br>
+Temps d'execució de la prova: 0.181748seg.</P>
+<P><b>CAMI OK:</b> [V0001 &mdash;E0001&rarr; V0001 // V0002 &mdash;E0003&rarr; V0001 // V0003 &mdash;E0009&rarr; V0001 // V0011 &mdash;E0013&rarr; V0001 // V0010 &mdash;E0015$Reverse&rarr; V0001 // V0006 &mdash;E0017&rarr; V0001 // V0007 &mdash;E0019&rarr; V0001 // V0008 &mdash;E0021&rarr; V0001 // V0009 &mdash;E0025&rarr; V0001 // V0011 &mdash;E0009$Reverse&rarr; V0001 // V0003 &mdash;E0005&rarr; V0001 // V0004 &mdash;E0007&rarr; V0005]</P>
+<P><b>CAMI PRACTICA:</b> [V0001 &mdash;E0001&rarr; V0001 // V0002 &mdash;E0003&rarr; V0001 // V0003 &mdash;E0009&rarr; V0001 // V0011 &mdash;E0013&rarr; V0001 // V0010 &mdash;E0015$Reverse&rarr; V0001 // V0006 &mdash;E0017&rarr; V0001 // V0007 &mdash;E0019&rarr; V0001 // V0008 &mdash;E0021&rarr; V0001 // V0009 &mdash;E0025&rarr; V0001 // V0011 &mdash;E0009$Reverse&rarr; V0001 // V0003 &mdash;E0005&rarr; V0001 // V0004 &mdash;E0007&rarr; V0005]</P>
+
+ <b>CORRECTE</b>
+</div>
+<div class="test elemento" data-propiedades="correcta ">
+<hr>
+<a name="TEST_4">
+<h3>Prova Salesman ProbabiísticAfterEnd</h3>
+</a>
+<p> Fitxer del graf: TestSalesMan\AfterEnd.GR<br>
+Fitxer amb les visites: "TestSalesMan\\AfterEnd.VIS"</p>
+Fitxer amb el cami correcte: "TestSalesMan\\AfterEnd.TRK"</p>
+<p> Temps de referència: 0.161977seg.<br>
+Temps d'execució máxim: 0.647908seg.<br>
+Temps d'execució de la prova: 0.0190873seg.</P>
+<P><b>CAMI OK:</b> [V0001 &mdash;E0003&rarr; V0001 // V0009 &mdash;E0007&rarr; V0001 // V0008 &mdash;E0009&rarr; V0001 // V0003 &mdash;E0011&rarr; V0001 // V0006 &mdash;E0013&rarr; V0001 // V0007 &mdash;E0015&rarr; V0001 // V0004 &mdash;E0017&rarr; V0001 // V0005 &mdash;E0019&rarr; V0001 // V0003 &mdash;E0009$Reverse&rarr; V0008]</P>
+<P><b>CAMI PRACTICA:</b> [V0001 &mdash;E0003&rarr; V0001 // V0009 &mdash;E0007&rarr; V0001 // V0008 &mdash;E0009&rarr; V0001 // V0003 &mdash;E0011&rarr; V0001 // V0006 &mdash;E0013&rarr; V0001 // V0007 &mdash;E0015&rarr; V0001 // V0004 &mdash;E0017&rarr; V0001 // V0005 &mdash;E0019&rarr; V0001 // V0003 &mdash;E0009$Reverse&rarr; V0008]</P>
+
+ <b>CORRECTE</b>
+</div>
+<div class="test elemento" data-propiedades="correcta ">
+<hr>
+<a name="TEST_5">
+<h3>Prova Salesman ProbabiísticGraf10_20_3</h3>
+</a>
+<p> Fitxer del graf: TestSalesMan\Graf10_20_3.GR<br>
+Fitxer amb les visites: "TestSalesMan\\Graf10_20_3.VIS"</p>
+Fitxer amb el cami correcte: "TestSalesMan\\Graf10_20_3.TRK"</p>
+<p> Temps de referència: 0.0715943seg.<br>
+Temps d'execució máxim: 0.286377seg.<br>
+Temps d'execució de la prova: 0.0031351seg.</P>
+<P><b>CAMI OK:</b> [V0008 &mdash;E0025$Reverse&rarr; V0008 // V0007 &mdash;E0011$Reverse&rarr; V0008 // V0004 &mdash;E0005$Reverse&rarr; V0008 // V0003 &mdash;E0033&rarr; V0006]</P>
+<P><b>CAMI PRACTICA:</b> [V0008 &mdash;E0025$Reverse&rarr; V0008 // V0007 &mdash;E0011$Reverse&rarr; V0008 // V0004 &mdash;E0005$Reverse&rarr; V0008 // V0003 &mdash;E0033&rarr; V0006]</P>
+
+ <b>CORRECTE</b>
+</div>
+<div class="test elemento" data-propiedades="incorrecta ">
+<hr>
+<a name="TEST_6">
+<h3>Prova Salesman ProbabiísticGraf10_20_5</h3>
+</a>
+<p> Fitxer del graf: TestSalesMan\Graf10_20_5.GR<br>
+Fitxer amb les visites: "TestSalesMan\\Graf10_20_5.VIS"</p>
+Fitxer amb el cami correcte: "TestSalesMan\\Graf10_20_5.TRK"</p>
+<p> Temps de referència: 0.156468seg.<br>
+Temps d'execució máxim: 0.625872seg.<br>
+Temps d'execució de la prova: 0.0214105seg.</P>
+<P><b>CAMI OK:</b> [V0007 &mdash;E0029$Reverse&rarr; V0007 // V0003 &mdash;E0021$Reverse&rarr; V0007 // V0005 &mdash;E0021&rarr; V0007 // V0003 &mdash;E0031&rarr; V0007 // V0006 &mdash;E0013&rarr; V0007 // V0008 &mdash;E0019&rarr; V0002]</P>
+<P><b>CAMI PRACTICA:</b> [V0007 &mdash;E0037$Reverse&rarr; V0007 // V0008 &mdash;E0037&rarr; V0007 &mdash;E0029$Reverse&rarr; V0007 // V0003 &mdash;E0021$Reverse&rarr; V0007 // V0005 &mdash;E0021&rarr; V0007 // V0003 &mdash;E0031&rarr; V0007 // V0006 &mdash;E0009$Reverse&rarr; V0002]</P>
+
+<b style="color: red; ">Falla amb 1 errors</b>
+<ul>
+<li>Camí massa llarg
+<dd>
+Camí masa llarg ( longitud correcte 59549.7, longitud camin pràctica 60930)
+</dd>
+</ul><br></div>
+<div class="test elemento" data-propiedades="correcta ">
+<hr>
+<a name="TEST_7">
+<h3>Prova Salesman ProbabiísticGraf10_20_6</h3>
+</a>
+<p> Fitxer del graf: TestSalesMan\Graf10_20_6.GR<br>
+Fitxer amb les visites: "TestSalesMan\\Graf10_20_6.VIS"</p>
+Fitxer amb el cami correcte: "TestSalesMan\\Graf10_20_6.TRK"</p>
+<p> Temps de referència: 0.256546seg.<br>
+Temps d'execució máxim: 1.02618seg.<br>
+Temps d'execució de la prova: 0.0520559seg.</P>
+<P><b>CAMI OK:</b> [V0002 &mdash;E0001$Reverse&rarr; V0002 // V0001 &mdash;E0013&rarr; V0002 // V0008 &mdash;E0017&rarr; V0002 // V0010 &mdash;E0035&rarr; V0002 // V0005 &mdash;E0019&rarr; V0002 // V0003 &mdash;E0023$Reverse&rarr; V0002 // V0004 &mdash;E0011&rarr; V0007]</P>
+<P><b>CAMI PRACTICA:</b> [V0002 &mdash;E0001$Reverse&rarr; V0002 // V0001 &mdash;E0013&rarr; V0002 // V0008 &mdash;E0017&rarr; V0002 // V0010 &mdash;E0035&rarr; V0002 // V0005 &mdash;E0019&rarr; V0002 // V0003 &mdash;E0023$Reverse&rarr; V0002 // V0004 &mdash;E0011&rarr; V0007]</P>
+
+ <b>CORRECTE</b>
+</div>
+<div class="test elemento" data-propiedades="correcta ">
+<hr>
+<a name="TEST_8">
+<h3>Prova Salesman ProbabiísticGraf10_40_4</h3>
+</a>
+<p> Fitxer del graf: TestSalesMan\Graf10_40_4.GR<br>
+Fitxer amb les visites: "TestSalesMan\\Graf10_40_4.VIS"</p>
+Fitxer amb el cami correcte: "TestSalesMan\\Graf10_40_4.TRK"</p>
+<p> Temps de referència: 0.110521seg.<br>
+Temps d'execució máxim: 0.442084seg.<br>
+Temps d'execució de la prova: 0.0084628seg.</P>
+<P><b>CAMI OK:</b> [V0003 &mdash;E0003$Reverse&rarr; V0003 // V0002 &mdash;E0033$Reverse&rarr; V0003 // V0008 &mdash;E0013$Reverse&rarr; V0003 // V0007 &mdash;E0011$Reverse&rarr; V0003 // V0006 &mdash;E0039$Reverse&rarr; V0001]</P>
+<P><b>CAMI PRACTICA:</b> [V0003 &mdash;E0003$Reverse&rarr; V0003 // V0002 &mdash;E0033$Reverse&rarr; V0003 // V0008 &mdash;E0013$Reverse&rarr; V0003 // V0007 &mdash;E0011$Reverse&rarr; V0003 // V0006 &mdash;E0039$Reverse&rarr; V0001]</P>
+
+ <b>CORRECTE</b>
+</div>
+<div class="test elemento" data-propiedades="correcta ">
+<hr>
+<a name="TEST_9">
+<h3>Prova Salesman Probabiísticgraf20_100_4</h3>
+</a>
+<p> Fitxer del graf: TestSalesMan\graf20_100_4.GR<br>
+Fitxer amb les visites: "TestSalesMan\\graf20_100_4.VIS"</p>
+Fitxer amb el cami correcte: "TestSalesMan\\graf20_100_4.TRK"</p>
+<p> Temps de referència: 0.107646seg.<br>
+Temps d'execució máxim: 0.430584seg.<br>
+Temps d'execució de la prova: 0.0081481seg.</P>
+<P><b>CAMI OK:</b> [V0018 &mdash;E0103$Reverse&rarr; V0018 // V0007 &mdash;E0015&rarr; V0018 // V0009 &mdash;E0173$Reverse&rarr; V0018 // V0017 &mdash;E0087&rarr; V0018 // V0002 &mdash;E0009&rarr; V0006]</P>
+<P><b>CAMI PRACTICA:</b> [V0018 &mdash;E0103$Reverse&rarr; V0018 // V0007 &mdash;E0015&rarr; V0018 // V0009 &mdash;E0173$Reverse&rarr; V0018 // V0017 &mdash;E0087&rarr; V0018 // V0002 &mdash;E0009&rarr; V0006]</P>
+
+ <b>CORRECTE</b>
+</div>
+<div class="test elemento" data-propiedades="correcta ">
+<hr>
+<a name="TEST_10">
+<h3>Prova Salesman Probabiísticgraf30_300_8</h3>
+</a>
+<p> Fitxer del graf: TestSalesMan\graf30_300_8.GR<br>
+Fitxer amb les visites: "TestSalesMan\\graf30_300_8.VIS"</p>
+Fitxer amb el cami correcte: "TestSalesMan\\graf30_300_8.TRK"</p>
+<p> Temps de referència: 0.516258seg.<br>
+Temps d'execució máxim: 2.06503seg.<br>
+Temps d'execució de la prova: 0.198957seg.</P>
+<P><b>CAMI OK:</b> [V0012 &mdash;E0021$Reverse&rarr; V0012 // V0009 &mdash;E0023&rarr; V0012 // V0013 &mdash;E0531$Reverse&rarr; V0012 // V0020 &mdash;E0313$Reverse&rarr; V0012 // V0011 &mdash;E0519$Reverse&rarr; V0012 // V0022 &mdash;E0233&rarr; V0012 // V0015 &mdash;E0189&rarr; V0012 // V0029 &mdash;E0365&rarr; V0012 // V0006 &mdash;E0437$Reverse&rarr; V0012 // V0024 &mdash;E0349&rarr; V0012 // V0008 &mdash;E0127$Reverse&rarr; V0021]</P>
+<P><b>CAMI PRACTICA:</b> [V0012 &mdash;E0021$Reverse&rarr; V0012 // V0009 &mdash;E0023&rarr; V0012 // V0013 &mdash;E0531$Reverse&rarr; V0012 // V0020 &mdash;E0313$Reverse&rarr; V0012 // V0011 &mdash;E0519$Reverse&rarr; V0012 // V0022 &mdash;E0233&rarr; V0012 // V0015 &mdash;E0189&rarr; V0012 // V0029 &mdash;E0365&rarr; V0012 // V0006 &mdash;E0437$Reverse&rarr; V0012 // V0024 &mdash;E0349&rarr; V0012 // V0008 &mdash;E0127$Reverse&rarr; V0021]</P>
+
+ <b>CORRECTE</b>
+</div>
+<div class="test elemento" data-propiedades="correcta ">
+<hr>
+<a name="TEST_11">
+<h3>Prova Salesman ProbabiísticGraf50_200_6</h3>
+</a>
+<p> Fitxer del graf: TestSalesMan\Graf50_200_6.GR<br>
+Fitxer amb les visites: "TestSalesMan\\Graf50_200_6.VIS"</p>
+Fitxer amb el cami correcte: "TestSalesMan\\Graf50_200_6.TRK"</p>
+<p> Temps de referència: 0.238045seg.<br>
+Temps d'execució máxim: 0.95218seg.<br>
+Temps d'execució de la prova: 0.0488602seg.</P>
+<P><b>CAMI OK:</b> [V0010 &mdash;E0161&rarr; V0010 // V0007 &mdash;E0011$Reverse&rarr; V0010 // V0003 &mdash;E0007&rarr; V0010 // V0005 &mdash;E0143$Reverse&rarr; V0010 // V0007 &mdash;E0135$Reverse&rarr; V0010 // V0019 &mdash;E0045&rarr; V0010 // V0014 &mdash;E0113$Reverse&rarr; V0012]</P>
+<P><b>CAMI PRACTICA:</b> [V0010 &mdash;E0161&rarr; V0010 // V0007 &mdash;E0011$Reverse&rarr; V0010 // V0003 &mdash;E0007&rarr; V0010 // V0005 &mdash;E0143$Reverse&rarr; V0010 // V0007 &mdash;E0135$Reverse&rarr; V0010 // V0019 &mdash;E0045&rarr; V0010 // V0014 &mdash;E0113$Reverse&rarr; V0012]</P>
+
+ <b>CORRECTE</b>
+</div>
+<div class="test elemento" data-propiedades="correcta ">
+<hr>
+<a name="TEST_12">
+<h3>Prova Salesman ProbabiísticGraf50_200_7C</h3>
+</a>
+<p> Fitxer del graf: TestSalesMan\Graf50_200_7C.GR<br>
+Fitxer amb les visites: "TestSalesMan\\Graf50_200_7C.VIS"</p>
+Fitxer amb el cami correcte: "TestSalesMan\\Graf50_200_7C.TRK"</p>
+<p> Temps de referència: 0.495985seg.<br>
+Temps d'execució máxim: 1.98394seg.<br>
+Temps d'execució de la prova: 0.165657seg.</P>
+<P><b>CAMI OK:</b> [V0001 &mdash;E0001&rarr; V0001 // V0002 &mdash;E0003&rarr; V0001 // V0003 &mdash;E0037&rarr; V0001 // V0004 &mdash;E0011&rarr; V0001 // V0007 &mdash;E0035&rarr; V0001 // V0009 &mdash;E0021&rarr; V0001 // V0002 &mdash;E0001$Reverse&rarr; V0001 &mdash;E0017&rarr; V0001 // V0010 &mdash;E0017$Reverse&rarr; V0001]</P>
+<P><b>CAMI PRACTICA:</b> [V0001 &mdash;E0001&rarr; V0001 // V0002 &mdash;E0003&rarr; V0001 // V0003 &mdash;E0037&rarr; V0001 // V0004 &mdash;E0011&rarr; V0001 // V0007 &mdash;E0035&rarr; V0001 // V0009 &mdash;E0021&rarr; V0001 // V0002 &mdash;E0001$Reverse&rarr; V0001 &mdash;E0017&rarr; V0001 // V0010 &mdash;E0017$Reverse&rarr; V0001]</P>
+
+ <b>CORRECTE</b>
+</div>
+<div class="test elemento" data-propiedades="correcta ">
+<hr>
+<a name="TEST_13">
+<h3>Prova Salesman ProbabiísticGraf100_200_17</h3>
+</a>
+<p> Fitxer del graf: TestSalesMan\Graf100_200_17.GR<br>
+Fitxer amb les visites: "TestSalesMan\\Graf100_200_17.VIS"</p>
+Fitxer amb el cami correcte: "TestSalesMan\\Graf100_200_17.TRK"</p>
+<p> Temps de referència: 5.38768seg.<br>
+Temps d'execució máxim: 21.5507seg.<br>
+Temps d'execució de la prova: 4.91807seg.</P>
+<P><b>CAMI OK:</b> [V0083 &mdash;E0253&rarr; V0083 // V0061 &mdash;E0119$Reverse&rarr; V0083 // V0004 &mdash;E0371&rarr; V0083 // V0046 &mdash;E0233$Reverse&rarr; V0083 // V0009 &mdash;E0049&rarr; V0083 // V0026 &mdash;E0073&rarr; V0083 // V0038 &mdash;E0147&rarr; V0083 // V0075 &mdash;E0179&rarr; V0083 // V0091 &mdash;E0179$Reverse&rarr; V0083 // V0075 &mdash;E0147$Reverse&rarr; V0083 // V0038 &mdash;E0073$Reverse&rarr; V0083 // V0026 &mdash;E0067&rarr; V0083 // V0035 &mdash;E0379&rarr; V0083 // V0029 &mdash;E0083&rarr; V0083 // V0043 &mdash;E0275&rarr; V0083 // V0049 &mdash;E0243$Reverse&rarr; V0083 // V0076 &mdash;E0299&rarr; V0083 // V0021 &mdash;E0301&rarr; V0083 // V0020 &mdash;E0085&rarr; V0083 // V0044 &mdash;E0205&rarr; V0083 // V0086 &mdash;E0205$Reverse&rarr; V0083 // V0044 &mdash;E0305&rarr; V0083 // V0017 &mdash;E0305$Reverse&rarr; V0083 // V0044 &mdash;E0131&rarr; V0083 // V0067 &mdash;E0245&rarr; V0083 // V0022 &mdash;E0247$Reverse&rarr; V0083 // V0023 &mdash;E0043$Reverse&rarr; V0083 // V0015 &mdash;E0045&rarr; V0083 // V0024 &mdash;E0129&rarr; V0083 // V0066 &mdash;E0321$Reverse&rarr; V0083 // V0011 &mdash;E0387$Reverse&rarr; V0083 // V0055 &mdash;E0273&rarr; V0083 // V0007 &mdash;E0011$Reverse&rarr; V0083 // V0002 &mdash;E0023&rarr; V0083 // V0013 &mdash;E0091&rarr; V0083 // V0047 &mdash;E0355&rarr; V0083 // V0087 &mdash;E0237&rarr; V0083 // V0027 &mdash;E0051$Reverse&rarr; V0083 // V0003 &mdash;E0029&rarr; V0083 // V0016 &mdash;E0127&rarr; V0065]</P>
+<P><b>CAMI PRACTICA:</b> [V0083 &mdash;E0253&rarr; V0083 // V0061 &mdash;E0119$Reverse&rarr; V0083 // V0004 &mdash;E0371&rarr; V0083 // V0046 &mdash;E0233$Reverse&rarr; V0083 // V0009 &mdash;E0049&rarr; V0083 // V0026 &mdash;E0073&rarr; V0083 // V0038 &mdash;E0147&rarr; V0083 // V0075 &mdash;E0179&rarr; V0083 // V0091 &mdash;E0179$Reverse&rarr; V0083 // V0075 &mdash;E0147$Reverse&rarr; V0083 // V0038 &mdash;E0073$Reverse&rarr; V0083 // V0026 &mdash;E0067&rarr; V0083 // V0035 &mdash;E0379&rarr; V0083 // V0029 &mdash;E0083&rarr; V0083 // V0043 &mdash;E0275&rarr; V0083 // V0049 &mdash;E0243$Reverse&rarr; V0083 // V0076 &mdash;E0299&rarr; V0083 // V0021 &mdash;E0301&rarr; V0083 // V0020 &mdash;E0085&rarr; V0083 // V0044 &mdash;E0305&rarr; V0083 // V0017 &mdash;E0305$Reverse&rarr; V0083 // V0044 &mdash;E0205&rarr; V0083 // V0086 &mdash;E0205$Reverse&rarr; V0083 // V0044 &mdash;E0131&rarr; V0083 // V0067 &mdash;E0245&rarr; V0083 // V0022 &mdash;E0247$Reverse&rarr; V0083 // V0023 &mdash;E0043$Reverse&rarr; V0083 // V0015 &mdash;E0045&rarr; V0083 // V0024 &mdash;E0129&rarr; V0083 // V0066 &mdash;E0321$Reverse&rarr; V0083 // V0011 &mdash;E0387$Reverse&rarr; V0083 // V0055 &mdash;E0273&rarr; V0083 // V0007 &mdash;E0011$Reverse&rarr; V0083 // V0002 &mdash;E0023&rarr; V0083 // V0013 &mdash;E0091&rarr; V0083 // V0047 &mdash;E0355&rarr; V0083 // V0087 &mdash;E0237&rarr; V0083 // V0027 &mdash;E0051$Reverse&rarr; V0083 // V0003 &mdash;E0029&rarr; V0083 // V0016 &mdash;E0127&rarr; V0065]</P>
+
+ <b>CORRECTE</b>
+</div>
+<div class="test elemento" data-propiedades="correcta ">
+<hr>
+<a name="TEST_14">
+<h3>Prova Salesman ProbabiísticGraf100_200_18</h3>
+</a>
+<p> Fitxer del graf: TestSalesMan\Graf100_200_18.GR<br>
+Fitxer amb les visites: "TestSalesMan\\Graf100_200_18.VIS"</p>
+Fitxer amb el cami correcte: "TestSalesMan\\Graf100_200_18.TRK"</p>
+<p> Temps de referència: 6.82073seg.<br>
+Temps d'execució máxim: 27.2829seg.<br>
+Temps d'execució de la prova: 6.7987seg.</P>
+<P><b>CAMI OK:</b> [V0067 &mdash;E0131$Reverse&rarr; V0067 // V0041 &mdash;E0361$Reverse&rarr; V0067 // V0098 &mdash;E0361&rarr; V0067 // V0041 &mdash;E0173&rarr; V0067 // V0088 &mdash;E0173$Reverse&rarr; V0067 // V0041 &mdash;E0273$Reverse&rarr; V0067 // V0056 &mdash;E0169&rarr; V0067 // V0086 &mdash;E0169$Reverse&rarr; V0067 // V0056 &mdash;E0265&rarr; V0067 // V0005 &mdash;E0061&rarr; V0067 // V0032 &mdash;E0287$Reverse&rarr; V0067 // V0094 &mdash;E0301$Reverse&rarr; V0067 // V0063 &mdash;E0123$Reverse&rarr; V0067 // V0058 &mdash;E0347$Reverse&rarr; V0067 // V0083 &mdash;E0353$Reverse&rarr; V0067 // V0049 &mdash;E0129&rarr; V0067 // V0066 &mdash;E0129$Reverse&rarr; V0067 // V0049 &mdash;E0095$Reverse&rarr; V0067 // V0008 &mdash;E0303&rarr; V0067 // V0057 &mdash;E0111$Reverse&rarr; V0067 // V0031 &mdash;E0101&rarr; V0067 // V0052 &mdash;E0225$Reverse&rarr; V0067 // V0076 &mdash;E0149$Reverse&rarr; V0067 // V0071 &mdash;E0139$Reverse&rarr; V0067 // V0054 &mdash;E0319&rarr; V0067 // V0080 &mdash;E0349&rarr; V0067 // V0017 &mdash;E0323$Reverse&rarr; V0067 // V0029 &mdash;E0093&rarr; V0067 // V0048 &mdash;E0393&rarr; V0067 // V0037 &mdash;E0071$Reverse&rarr; V0067 // V0018 &mdash;E0125&rarr; V0067 // V0064 &mdash;E0125$Reverse&rarr; V0067 // V0018 &mdash;E0311$Reverse&rarr; V0067 // V0007 &mdash;E0145&rarr; V0067 // V0074 &mdash;E0325&rarr; V0067 // V0013 &mdash;E0257$Reverse&rarr; V0067 // V0072 &mdash;E0257&rarr; V0067 // V0013 &mdash;E0213$Reverse&rarr; V0067 // V0023 &mdash;E0103&rarr; V0067 // V0053 &mdash;E0329&rarr; V0065]</P>
+<P><b>CAMI PRACTICA:</b> [V0067 &mdash;E0131$Reverse&rarr; V0067 // V0041 &mdash;E0173&rarr; V0067 // V0088 &mdash;E0173$Reverse&rarr; V0067 // V0041 &mdash;E0361$Reverse&rarr; V0067 // V0098 &mdash;E0361&rarr; V0067 // V0041 &mdash;E0273$Reverse&rarr; V0067 // V0056 &mdash;E0169&rarr; V0067 // V0086 &mdash;E0169$Reverse&rarr; V0067 // V0056 &mdash;E0265&rarr; V0067 // V0005 &mdash;E0061&rarr; V0067 // V0032 &mdash;E0287$Reverse&rarr; V0067 // V0094 &mdash;E0301$Reverse&rarr; V0067 // V0063 &mdash;E0123$Reverse&rarr; V0067 // V0058 &mdash;E0347$Reverse&rarr; V0067 // V0083 &mdash;E0353$Reverse&rarr; V0067 // V0049 &mdash;E0129&rarr; V0067 // V0066 &mdash;E0129$Reverse&rarr; V0067 // V0049 &mdash;E0095$Reverse&rarr; V0067 // V0008 &mdash;E0303&rarr; V0067 // V0057 &mdash;E0111$Reverse&rarr; V0067 // V0031 &mdash;E0101&rarr; V0067 // V0052 &mdash;E0225$Reverse&rarr; V0067 // V0076 &mdash;E0149$Reverse&rarr; V0067 // V0071 &mdash;E0139$Reverse&rarr; V0067 // V0054 &mdash;E0319&rarr; V0067 // V0080 &mdash;E0349&rarr; V0067 // V0017 &mdash;E0323$Reverse&rarr; V0067 // V0029 &mdash;E0093&rarr; V0067 // V0048 &mdash;E0393&rarr; V0067 // V0037 &mdash;E0071$Reverse&rarr; V0067 // V0018 &mdash;E0125&rarr; V0067 // V0064 &mdash;E0125$Reverse&rarr; V0067 // V0018 &mdash;E0311$Reverse&rarr; V0067 // V0007 &mdash;E0145&rarr; V0067 // V0074 &mdash;E0325&rarr; V0067 // V0013 &mdash;E0257$Reverse&rarr; V0067 // V0072 &mdash;E0257&rarr; V0067 // V0013 &mdash;E0213$Reverse&rarr; V0067 // V0023 &mdash;E0103&rarr; V0067 // V0053 &mdash;E0329&rarr; V0065]</P>
+
+ <b>CORRECTE</b>
+</div>
+<div class="test elemento" data-propiedades="correcta ">
+<hr>
+<a name="TEST_15">
+<h3>Prova Salesman ProbabiísticGraf100_200_19</h3>
+</a>
+<p> Fitxer del graf: TestSalesMan\Graf100_200_19.GR<br>
+Fitxer amb les visites: "TestSalesMan\\Graf100_200_19.VIS"</p>
+Fitxer amb el cami correcte: "TestSalesMan\\Graf100_200_19.TRK"</p>
+<p> Temps de referència: 8.13285seg.<br>
+Temps d'execució máxim: 32.5314seg.<br>
+Temps d'execució de la prova: 8.56714seg.</P>
+<P><b>CAMI OK:</b> [V0054 &mdash;E0105$Reverse&rarr; V0054 // V0043 &mdash;E0179&rarr; V0054 // V0091 &mdash;E0179$Reverse&rarr; V0054 // V0043 &mdash;E0125&rarr; V0054 // V0064 &mdash;E0335&rarr; V0054 // V0006 &mdash;E0065&rarr; V0054 // V0034 &mdash;E0363&rarr; V0054 // V0056 &mdash;E0139&rarr; V0054 // V0071 &mdash;E0265&rarr; V0054 // V0009 &mdash;E0259&rarr; V0054 // V0069 &mdash;E0135$Reverse&rarr; V0054 // V0060 &mdash;E0145&rarr; V0054 // V0074 &mdash;E0331$Reverse&rarr; V0054 // V0051 &mdash;E0331&rarr; V0054 // V0074 &mdash;E0145$Reverse&rarr; V0054 // V0060 &mdash;E0277$Reverse&rarr; V0054 // V0089 &mdash;E0383&rarr; V0054 // V0073 &mdash;E0143$Reverse&rarr; V0054 // V0021 &mdash;E0047&rarr; V0054 // V0025 &mdash;E0173&rarr; V0054 // V0088 &mdash;E0173$Reverse&rarr; V0054 // V0025 &mdash;E0289&rarr; V0054 // V0016 &mdash;E0107&rarr; V0054 // V0055 &mdash;E0247&rarr; V0054 // V0083 &mdash;E0261$Reverse&rarr; V0054 // V0002 &mdash;E0049&rarr; V0054 // V0026 &mdash;E0089&rarr; V0054 // V0046 &mdash;E0141&rarr; V0054 // V0072 &mdash;E0159&rarr; V0054 // V0081 &mdash;E0159$Reverse&rarr; V0054 // V0072 &mdash;E0141$Reverse&rarr; V0054 // V0046 &mdash;E0089$Reverse&rarr; V0054 // V0026 &mdash;E0223&rarr; V0054 // V0019 &mdash;E0285$Reverse&rarr; V0054 // V0014 &mdash;E0033&rarr; V0054 // V0018 &mdash;E0033$Reverse&rarr; V0054 // V0014 &mdash;E0381$Reverse&rarr; V0054 // V0022 &mdash;E0183&rarr; V0054 // V0093 &mdash;E0319$Reverse&rarr; V0054 // V0010 &mdash;E0055&rarr; V0054 // V0029 &mdash;E0391&rarr; V0054 // V0067 &mdash;E0389$Reverse&rarr; V0054 // V0082 &mdash;E0389&rarr; V0054 // V0067 &mdash;E0131$Reverse&rarr; V0054 // V0059 &mdash;E0115$Reverse&rarr; V0052]</P>
+<P><b>CAMI PRACTICA:</b> [V0054 &mdash;E0105$Reverse&rarr; V0054 // V0043 &mdash;E0179&rarr; V0054 // V0091 &mdash;E0179$Reverse&rarr; V0054 // V0043 &mdash;E0125&rarr; V0054 // V0064 &mdash;E0335&rarr; V0054 // V0006 &mdash;E0065&rarr; V0054 // V0034 &mdash;E0363&rarr; V0054 // V0056 &mdash;E0139&rarr; V0054 // V0071 &mdash;E0265&rarr; V0054 // V0009 &mdash;E0259&rarr; V0054 // V0069 &mdash;E0135$Reverse&rarr; V0054 // V0060 &mdash;E0145&rarr; V0054 // V0074 &mdash;E0331$Reverse&rarr; V0054 // V0051 &mdash;E0331&rarr; V0054 // V0074 &mdash;E0145$Reverse&rarr; V0054 // V0060 &mdash;E0277$Reverse&rarr; V0054 // V0089 &mdash;E0383&rarr; V0054 // V0073 &mdash;E0143$Reverse&rarr; V0054 // V0021 &mdash;E0047&rarr; V0054 // V0025 &mdash;E0173&rarr; V0054 // V0088 &mdash;E0173$Reverse&rarr; V0054 // V0025 &mdash;E0289&rarr; V0054 // V0016 &mdash;E0107&rarr; V0054 // V0055 &mdash;E0247&rarr; V0054 // V0083 &mdash;E0261$Reverse&rarr; V0054 // V0002 &mdash;E0049&rarr; V0054 // V0026 &mdash;E0089&rarr; V0054 // V0046 &mdash;E0141&rarr; V0054 // V0072 &mdash;E0159&rarr; V0054 // V0081 &mdash;E0159$Reverse&rarr; V0054 // V0072 &mdash;E0141$Reverse&rarr; V0054 // V0046 &mdash;E0089$Reverse&rarr; V0054 // V0026 &mdash;E0223&rarr; V0054 // V0019 &mdash;E0285$Reverse&rarr; V0054 // V0014 &mdash;E0033&rarr; V0054 // V0018 &mdash;E0033$Reverse&rarr; V0054 // V0014 &mdash;E0381$Reverse&rarr; V0054 // V0022 &mdash;E0183&rarr; V0054 // V0093 &mdash;E0319$Reverse&rarr; V0054 // V0010 &mdash;E0055&rarr; V0054 // V0029 &mdash;E0391&rarr; V0054 // V0067 &mdash;E0389$Reverse&rarr; V0054 // V0082 &mdash;E0389&rarr; V0054 // V0067 &mdash;E0131$Reverse&rarr; V0054 // V0059 &mdash;E0115$Reverse&rarr; V0052]</P>
+
+ <b>CORRECTE</b>
+</div>
+<div class="test elemento" data-propiedades="correcta ">
+<hr>
+<a name="TEST_16">
+<h3>Prova Salesman ProbabiísticGraf100_200_21</h3>
+</a>
+<p> Fitxer del graf: TestSalesMan\Graf100_200_21.GR<br>
+Fitxer amb les visites: "TestSalesMan\\Graf100_200_21.VIS"</p>
+Fitxer amb el cami correcte: "TestSalesMan\\Graf100_200_21.TRK"</p>
+<p> Temps de referència: 10.5802seg.<br>
+Temps d'execució máxim: 42.3208seg.<br>
+Temps d'execució de la prova: 12.4898seg.</P>
+<P><b>CAMI OK:</b> [V0024 &mdash;E0355$Reverse&rarr; V0024 // V0042 &mdash;E0355&rarr; V0024 &mdash;E0045$Reverse&rarr; V0024 // V0007 &mdash;E0023&rarr; V0024 // V0013 &mdash;E0023$Reverse&rarr; V0024 // V0007 &mdash;E0011$Reverse&rarr; V0024 // V0002 &mdash;E0283&rarr; V0024 // V0091 &mdash;E0283$Reverse&rarr; V0024 // V0002 &mdash;E0003&rarr; V0024 // V0003 &mdash;E0271&rarr; V0024 // V0030 &mdash;E0083&rarr; V0024 // V0043 &mdash;E0303$Reverse&rarr; V0024 // V0046 &mdash;E0089$Reverse&rarr; V0024 // V0018 &mdash;E0033$Reverse&rarr; V0024 // V0008 &mdash;E0049&rarr; V0024 // V0026 &mdash;E0139&rarr; V0024 // V0071 &mdash;E0347$Reverse&rarr; V0024 // V0099 &mdash;E0305$Reverse&rarr; V0024 // V0050 &mdash;E0263&rarr; V0024 // V0087 &mdash;E0175&rarr; V0024 // V0089 &mdash;E0175$Reverse&rarr; V0024 // V0087 &mdash;E0171$Reverse&rarr; V0024 // V0077 &mdash;E0211$Reverse&rarr; V0024 // V0060 &mdash;E0211&rarr; V0024 // V0077 &mdash;E0203$Reverse&rarr; V0024 // V0058 &mdash;E0239&rarr; V0024 // V0010 &mdash;E0153&rarr; V0024 // V0078 &mdash;E0215$Reverse&rarr; V0024 // V0085 &mdash;E0167$Reverse&rarr; V0024 // V0021 &mdash;E0199&rarr; V0024 // V0072 &mdash;E0293$Reverse&rarr; V0024 // V0029 &mdash;E0293&rarr; V0024 // V0072 &mdash;E0141$Reverse&rarr; V0024 // V0044 &mdash;E0225&rarr; V0024 // V0100 &mdash;E0197$Reverse&rarr; V0024 // V0056 &mdash;E0237&rarr; V0024 // V0095 &mdash;E0367$Reverse&rarr; V0024 // V0019 &mdash;E0061&rarr; V0024 // V0032 &mdash;E0233$Reverse&rarr; V0006]</P>
+<P><b>CAMI PRACTICA:</b> [V0024 &mdash;E0355$Reverse&rarr; V0024 // V0042 &mdash;E0355&rarr; V0024 &mdash;E0045$Reverse&rarr; V0024 // V0007 &mdash;E0023&rarr; V0024 // V0013 &mdash;E0023$Reverse&rarr; V0024 // V0007 &mdash;E0011$Reverse&rarr; V0024 // V0002 &mdash;E0283&rarr; V0024 // V0091 &mdash;E0283$Reverse&rarr; V0024 // V0002 &mdash;E0003&rarr; V0024 // V0003 &mdash;E0271&rarr; V0024 // V0030 &mdash;E0083&rarr; V0024 // V0043 &mdash;E0303$Reverse&rarr; V0024 // V0046 &mdash;E0089$Reverse&rarr; V0024 // V0018 &mdash;E0033$Reverse&rarr; V0024 // V0008 &mdash;E0049&rarr; V0024 // V0026 &mdash;E0139&rarr; V0024 // V0071 &mdash;E0347$Reverse&rarr; V0024 // V0099 &mdash;E0305$Reverse&rarr; V0024 // V0050 &mdash;E0263&rarr; V0024 // V0087 &mdash;E0175&rarr; V0024 // V0089 &mdash;E0175$Reverse&rarr; V0024 // V0087 &mdash;E0171$Reverse&rarr; V0024 // V0077 &mdash;E0211$Reverse&rarr; V0024 // V0060 &mdash;E0211&rarr; V0024 // V0077 &mdash;E0203$Reverse&rarr; V0024 // V0058 &mdash;E0239&rarr; V0024 // V0010 &mdash;E0153&rarr; V0024 // V0078 &mdash;E0215$Reverse&rarr; V0024 // V0085 &mdash;E0167$Reverse&rarr; V0024 // V0021 &mdash;E0199&rarr; V0024 // V0072 &mdash;E0293$Reverse&rarr; V0024 // V0029 &mdash;E0293&rarr; V0024 // V0072 &mdash;E0141$Reverse&rarr; V0024 // V0044 &mdash;E0225&rarr; V0024 // V0100 &mdash;E0197$Reverse&rarr; V0024 // V0056 &mdash;E0237&rarr; V0024 // V0095 &mdash;E0367$Reverse&rarr; V0024 // V0019 &mdash;E0061&rarr; V0024 // V0032 &mdash;E0233$Reverse&rarr; V0006]</P>
+
+ <b>CORRECTE</b>
+</div>
+<div class="test elemento" data-propiedades="correcta ">
+<hr>
+<a name="TEST_17">
+<h3>Prova Salesman ProbabiísticGraf50_300_20</h3>
+</a>
+<p> Fitxer del graf: TestSalesMan\Graf50_300_20.GR<br>
+Fitxer amb les visites: "TestSalesMan\\Graf50_300_20.VIS"</p>
+Fitxer amb el cami correcte: "TestSalesMan\\Graf50_300_20.TRK"</p>
+<p> Temps de referència: 9.86482seg.<br>
+Temps d'execució máxim: 39.4593seg.<br>
+Temps d'execució de la prova: 10.4847seg.</P>
+<P><b>CAMI OK:</b> [V0038 &mdash;E0373$Reverse&rarr; V0038 // V0021 &mdash;E0257$Reverse&rarr; V0038 // V0049 &mdash;E0535$Reverse&rarr; V0038 // V0020 &mdash;E0333$Reverse&rarr; V0038 // V0050 &mdash;E0189&rarr; V0038 // V0030 &mdash;E0189$Reverse&rarr; V0038 // V0050 &mdash;E0493$Reverse&rarr; V0038 // V0045 &mdash;E0271$Reverse&rarr; V0038 // V0047 &mdash;E0415$Reverse&rarr; V0038 // V0035 &mdash;E0067$Reverse&rarr; V0038 // V0025 &mdash;E0575$Reverse&rarr; V0038 // V0013 &mdash;E0035&rarr; V0038 // V0019 &mdash;E0215&rarr; V0038 // V0042 &mdash;E0323&rarr; V0038 // V0006 &mdash;E0323$Reverse&rarr; V0038 // V0042 &mdash;E0215$Reverse&rarr; V0038 // V0019 &mdash;E0593$Reverse&rarr; V0038 // V0040 &mdash;E0465$Reverse&rarr; V0038 // V0032 &mdash;E0213&rarr; V0038 // V0031 &mdash;E0213$Reverse&rarr; V0038 // V0032 &mdash;E0133$Reverse&rarr; V0038 // V0009 &mdash;E0227$Reverse&rarr; V0038 // V0005 &mdash;E0075&rarr; V0038 // V0039 &mdash;E0425$Reverse&rarr; V0038 // V0046 &mdash;E0147&rarr; V0038 // V0018 &mdash;E0469&rarr; V0014]</P>
+<P><b>CAMI PRACTICA:</b> [V0038 &mdash;E0373$Reverse&rarr; V0038 // V0021 &mdash;E0257$Reverse&rarr; V0038 // V0049 &mdash;E0535$Reverse&rarr; V0038 // V0020 &mdash;E0333$Reverse&rarr; V0038 // V0050 &mdash;E0189&rarr; V0038 // V0030 &mdash;E0189$Reverse&rarr; V0038 // V0050 &mdash;E0493$Reverse&rarr; V0038 // V0045 &mdash;E0271$Reverse&rarr; V0038 // V0047 &mdash;E0415$Reverse&rarr; V0038 // V0035 &mdash;E0067$Reverse&rarr; V0038 // V0025 &mdash;E0575$Reverse&rarr; V0038 // V0013 &mdash;E0035&rarr; V0038 // V0019 &mdash;E0215&rarr; V0038 // V0042 &mdash;E0323&rarr; V0038 // V0006 &mdash;E0323$Reverse&rarr; V0038 // V0042 &mdash;E0215$Reverse&rarr; V0038 // V0019 &mdash;E0593$Reverse&rarr; V0038 // V0040 &mdash;E0465$Reverse&rarr; V0038 // V0032 &mdash;E0213&rarr; V0038 // V0031 &mdash;E0213$Reverse&rarr; V0038 // V0032 &mdash;E0133$Reverse&rarr; V0038 // V0009 &mdash;E0227$Reverse&rarr; V0038 // V0005 &mdash;E0075&rarr; V0038 // V0039 &mdash;E0425$Reverse&rarr; V0038 // V0046 &mdash;E0147&rarr; V0038 // V0018 &mdash;E0469&rarr; V0014]</P>
+
+ <b>CORRECTE</b>
+</div>
+<div class="test elemento" data-propiedades="correcta ">
+<hr>
+<a name="TEST_18">
+<h3>Prova Salesman ProbabiísticGraf100_200_22</h3>
+</a>
+<p> Fitxer del graf: TestSalesMan\Graf100_200_22.GR<br>
+Fitxer amb les visites: "TestSalesMan\\Graf100_200_22.VIS"</p>
+Fitxer amb el cami correcte: "TestSalesMan\\Graf100_200_22.TRK"</p>
+<p> Temps de referència: 12.7978seg.<br>
+Temps d'execució máxim: 51.1912seg.<br>
+Temps d'execució de la prova: 15.4013seg.</P>
+<P><b>CAMI OK:</b> [V0013 &mdash;E0375$Reverse&rarr; V0013 // V0061 &mdash;E0147&rarr; V0013 // V0075 &mdash;E0299$Reverse&rarr; V0013 // V0064 &mdash;E0125$Reverse&rarr; V0013 // V0041 &mdash;E0125&rarr; V0013 // V0064 &mdash;E0173&rarr; V0013 // V0088 &mdash;E0173$Reverse&rarr; V0013 // V0064 &mdash;E0337$Reverse&rarr; V0013 // V0042 &mdash;E0113&rarr; V0013 // V0058 &mdash;E0127&rarr; V0013 // V0065 &mdash;E0127$Reverse&rarr; V0013 // V0058 &mdash;E0293&rarr; V0013 // V0098 &mdash;E0193$Reverse&rarr; V0013 // V0029 &mdash;E0075&rarr; V0013 // V0039 &mdash;E0075$Reverse&rarr; V0013 // V0029 &mdash;E0295$Reverse&rarr; V0013 // V0059 &mdash;E0359$Reverse&rarr; V0013 // V0008 &mdash;E0257$Reverse&rarr; V0013 // V0073 &mdash;E0245$Reverse&rarr; V0013 // V0083 &mdash;E0163$Reverse&rarr; V0013 // V0011 &mdash;E0383$Reverse&rarr; V0013 // V0089 &mdash;E0383&rarr; V0013 // V0011 &mdash;E0037&rarr; V0013 // V0020 &mdash;E0085&rarr; V0013 // V0044 &mdash;E0233$Reverse&rarr; V0013 // V0027 &mdash;E0249$Reverse&rarr; V0013 // V0034 &mdash;E0313$Reverse&rarr; V0013 // V0021 &mdash;E0211$Reverse&rarr; V0013 // V0046 &mdash;E0089$Reverse&rarr; V0013 // V0023 &mdash;E0063&rarr; V0013 // V0033 &mdash;E0339$Reverse&rarr; V0013 // V0015 &mdash;E0027$Reverse&rarr; V0013 // V0010 &mdash;E0185&rarr; V0013 // V0094 &mdash;E0185$Reverse&rarr; V0013 // V0010 &mdash;E0027&rarr; V0013 // V0015 &mdash;E0111&rarr; V0013 // V0057 &mdash;E0237$Reverse&rarr; V0013 // V0003 &mdash;E0273&rarr; V0013 // V0095 &mdash;E0279$Reverse&rarr; V0013 // V0051 &mdash;E0279&rarr; V0013 // V0095 &mdash;E0273$Reverse&rarr; V0013 // V0003 &mdash;E0365$Reverse&rarr; V0013 // V0070 &mdash;E0209&rarr; V0013 // V0050 &mdash;E0097$Reverse&rarr; V0013 // V0007 &mdash;E0097&rarr; V0013 // V0050 &mdash;E0291&rarr; V0013 // V0066 &mdash;E0381$Reverse&rarr; V0091]</P>
+<P><b>CAMI PRACTICA:</b> [V0013 &mdash;E0375$Reverse&rarr; V0013 // V0061 &mdash;E0147&rarr; V0013 // V0075 &mdash;E0299$Reverse&rarr; V0013 // V0064 &mdash;E0173&rarr; V0013 // V0088 &mdash;E0173$Reverse&rarr; V0013 // V0064 &mdash;E0125$Reverse&rarr; V0013 // V0041 &mdash;E0125&rarr; V0013 // V0064 &mdash;E0337$Reverse&rarr; V0013 // V0042 &mdash;E0113&rarr; V0013 // V0058 &mdash;E0127&rarr; V0013 // V0065 &mdash;E0127$Reverse&rarr; V0013 // V0058 &mdash;E0293&rarr; V0013 // V0098 &mdash;E0193$Reverse&rarr; V0013 // V0029 &mdash;E0075&rarr; V0013 // V0039 &mdash;E0075$Reverse&rarr; V0013 // V0029 &mdash;E0295$Reverse&rarr; V0013 // V0059 &mdash;E0359$Reverse&rarr; V0013 // V0008 &mdash;E0257$Reverse&rarr; V0013 // V0073 &mdash;E0245$Reverse&rarr; V0013 // V0083 &mdash;E0163$Reverse&rarr; V0013 // V0011 &mdash;E0383$Reverse&rarr; V0013 // V0089 &mdash;E0383&rarr; V0013 // V0011 &mdash;E0037&rarr; V0013 // V0020 &mdash;E0085&rarr; V0013 // V0044 &mdash;E0233$Reverse&rarr; V0013 // V0027 &mdash;E0249$Reverse&rarr; V0013 // V0034 &mdash;E0313$Reverse&rarr; V0013 // V0021 &mdash;E0211$Reverse&rarr; V0013 // V0046 &mdash;E0089$Reverse&rarr; V0013 // V0023 &mdash;E0063&rarr; V0013 // V0033 &mdash;E0339$Reverse&rarr; V0013 // V0015 &mdash;E0027$Reverse&rarr; V0013 // V0010 &mdash;E0185&rarr; V0013 // V0094 &mdash;E0185$Reverse&rarr; V0013 // V0010 &mdash;E0027&rarr; V0013 // V0015 &mdash;E0111&rarr; V0013 // V0057 &mdash;E0237$Reverse&rarr; V0013 // V0003 &mdash;E0273&rarr; V0013 // V0095 &mdash;E0279$Reverse&rarr; V0013 // V0051 &mdash;E0279&rarr; V0013 // V0095 &mdash;E0273$Reverse&rarr; V0013 // V0003 &mdash;E0365$Reverse&rarr; V0013 // V0070 &mdash;E0209&rarr; V0013 // V0050 &mdash;E0097$Reverse&rarr; V0013 // V0007 &mdash;E0097&rarr; V0013 // V0050 &mdash;E0291&rarr; V0013 // V0066 &mdash;E0381$Reverse&rarr; V0091]</P>
+
+ <b>CORRECTE</b>
+</div>
+<div class="test elemento" data-propiedades="incorrecta ">
+<hr>
+<a name="TEST_19">
+<h3>Prova Salesman ProbabiísticGraf100_200_23</h3>
+</a>
+<p> Fitxer del graf: TestSalesMan\Graf100_200_23.GR<br>
+Fitxer amb les visites: "TestSalesMan\\Graf100_200_23.VIS"</p>
+Fitxer amb el cami correcte: "TestSalesMan\\Graf100_200_23.TRK"</p>
+<p> Temps de referència: 15.2651seg.<br>
+Temps d'execució máxim: 61.0604seg.<br>
+Temps d'execució de la prova: 19.5615seg.</P>
+<P><b>CAMI OK:</b> [V0012 &mdash;E0023&rarr; V0012 // V0013 &mdash;E0043&rarr; V0012 // V0023 &mdash;E0107&rarr; V0012 // V0055 &mdash;E0107$Reverse&rarr; V0012 // V0023 &mdash;E0223$Reverse&rarr; V0012 // V0054 &mdash;E0255&rarr; V0012 // V0031 &mdash;E0259$Reverse&rarr; V0012 // V0043 &mdash;E0273$Reverse&rarr; V0012 // V0084 &mdash;E0305$Reverse&rarr; V0012 // V0024 &mdash;E0075&rarr; V0012 // V0039 &mdash;E0097&rarr; V0012 // V0050 &mdash;E0097$Reverse&rarr; V0012 // V0039 &mdash;E0109&rarr; V0012 // V0056 &mdash;E0109$Reverse&rarr; V0012 // V0039 &mdash;E0075$Reverse&rarr; V0012 // V0024 &mdash;E0045$Reverse&rarr; V0012 // V0014 &mdash;E0099&rarr; V0012 // V0051 &mdash;E0099$Reverse&rarr; V0012 // V0014 &mdash;E0035&rarr; V0012 // V0019 &mdash;E0155&rarr; V0012 // V0079 &mdash;E0307&rarr; V0012 // V0059 &mdash;E0115$Reverse&rarr; V0012 // V0044 &mdash;E0085$Reverse&rarr; V0012 // V0006 &mdash;E0309$Reverse&rarr; V0012 // V0057 &mdash;E0111$Reverse&rarr; V0012 // V0030 &mdash;E0129&rarr; V0012 // V0066 &mdash;E0375$Reverse&rarr; V0012 // V0070 &mdash;E0137$Reverse&rarr; V0012 // V0048 &mdash;E0285$Reverse&rarr; V0012 // V0053 &mdash;E0121&rarr; V0012 // V0062 &mdash;E0321&rarr; V0012 // V0093 &mdash;E0183$Reverse&rarr; V0012 // V0010 &mdash;E0063&rarr; V0012 // V0033 &mdash;E0199$Reverse&rarr; V0012 // V0035 &mdash;E0067$Reverse&rarr; V0012 // V0027 &mdash;E0297$Reverse&rarr; V0012 // V0085 &mdash;E0167$Reverse&rarr; V0012 // V0049 &mdash;E0095$Reverse&rarr; V0012 // V0005 &mdash;E0395$Reverse&rarr; V0012 // V0096 &mdash;E0279$Reverse&rarr; V0012 // V0022 &mdash;E0371&rarr; V0012 // V0097 &mdash;E0231$Reverse&rarr; V0012 // V0089 &mdash;E0175$Reverse&rarr; V0012 // V0042 &mdash;E0081$Reverse&rarr; V0015]</P>
+<P><b>CAMI PRACTICA:</b> [V0012 &mdash;E0377&rarr; V0012 // V0022 &mdash;E0371&rarr; V0012 // V0097 &mdash;E0231$Reverse&rarr; V0012 // V0089 &mdash;E0231&rarr; V0012 // V0097 &mdash;E0371$Reverse&rarr; V0012 // V0022 &mdash;E0279&rarr; V0012 // V0096 &mdash;E0395&rarr; V0012 // V0005 &mdash;E0095&rarr; V0012 // V0049 &mdash;E0167&rarr; V0012 // V0085 &mdash;E0297&rarr; V0012 // V0027 &mdash;E0067&rarr; V0012 // V0035 &mdash;E0199&rarr; V0012 // V0033 &mdash;E0063$Reverse&rarr; V0012 // V0010 &mdash;E0183&rarr; V0012 // V0093 &mdash;E0321$Reverse&rarr; V0012 // V0062 &mdash;E0121$Reverse&rarr; V0012 // V0053 &mdash;E0285&rarr; V0012 // V0048 &mdash;E0137&rarr; V0012 // V0070 &mdash;E0375&rarr; V0012 // V0066 &mdash;E0129$Reverse&rarr; V0012 // V0030 &mdash;E0111&rarr; V0012 // V0057 &mdash;E0309&rarr; V0012 // V0006 &mdash;E0085&rarr; V0012 // V0044 &mdash;E0115&rarr; V0012 // V0059 &mdash;E0307$Reverse&rarr; V0012 // V0079 &mdash;E0155$Reverse&rarr; V0012 // V0019 &mdash;E0035$Reverse&rarr; V0012 // V0014 &mdash;E0099&rarr; V0012 // V0051 &mdash;E0099$Reverse&rarr; V0012 // V0014 &mdash;E0045&rarr; V0012 // V0024 &mdash;E0075&rarr; V0012 // V0039 &mdash;E0097&rarr; V0012 // V0050 &mdash;E0097$Reverse&rarr; V0012 // V0039 &mdash;E0109&rarr; V0012 // V0056 &mdash;E0109$Reverse&rarr; V0012 // V0039 &mdash;E0075$Reverse&rarr; V0012 // V0024 &mdash;E0305&rarr; V0012 // V0084 &mdash;E0273&rarr; V0012 // V0043 &mdash;E0259&rarr; V0012 // V0031 &mdash;E0255$Reverse&rarr; V0012 // V0054 &mdash;E0223&rarr; V0012 // V0023 &mdash;E0107&rarr; V0012 // V0055 &mdash;E0387$Reverse&rarr; V0012 // V0002 &mdash;E0027&rarr; V0015]</P>
+
+<b style="color: red; ">Falla amb 1 errors</b>
+<ul>
+<li>Camí massa llarg
+<dd>
+Camí masa llarg ( longitud correcte 297501, longitud camin pràctica 298086)
+</dd>
+</ul><br></div>
+<div class="test elemento" data-propiedades="incorrecta ">
+<hr>
+<a name="TEST_20">
+<h3>Prova Salesman ProbabiísticGraf100_200_24</h3>
+</a>
+<p> Fitxer del graf: TestSalesMan\Graf100_200_24.GR<br>
+Fitxer amb les visites: "TestSalesMan\\Graf100_200_24.VIS"</p>
+Fitxer amb el cami correcte: "TestSalesMan\\Graf100_200_24.TRK"</p>
+<p> Temps de referència: 16.9525seg.<br>
+Temps d'execució máxim: 67.81seg.<br>
+Temps d'execució de la prova: 22.4858seg.</P>
+<P><b>CAMI OK:</b> [V0026 &mdash;E0065&rarr; V0026 // V0034 &mdash;E0179&rarr; V0026 // V0091 &mdash;E0179$Reverse&rarr; V0026 // V0034 &mdash;E0065$Reverse&rarr; V0026 &mdash;E0165&rarr; V0026 // V0084 &mdash;E0173&rarr; V0026 // V0088 &mdash;E0347&rarr; V0026 // V0030 &mdash;E0247$Reverse&rarr; V0026 // V0055 &mdash;E0107$Reverse&rarr; V0026 // V0050 &mdash;E0227$Reverse&rarr; V0026 // V0070 &mdash;E0137$Reverse&rarr; V0026 // V0025 &mdash;E0137&rarr; V0026 // V0070 &mdash;E0227&rarr; V0026 // V0050 &mdash;E0369$Reverse&rarr; V0026 // V0011 &mdash;E0019$Reverse&rarr; V0026 // V0008 &mdash;E0095&rarr; V0026 // V0049 &mdash;E0095$Reverse&rarr; V0026 // V0008 &mdash;E0013$Reverse&rarr; V0026 // V0002 &mdash;E0127&rarr; V0026 // V0065 &mdash;E0297$Reverse&rarr; V0026 // V0021 &mdash;E0387&rarr; V0026 // V0079 &mdash;E0155$Reverse&rarr; V0026 // V0056 &mdash;E0303$Reverse&rarr; V0026 // V0048 &mdash;E0287$Reverse&rarr; V0026 // V0040 &mdash;E0175&rarr; V0026 // V0089 &mdash;E0175$Reverse&rarr; V0026 // V0040 &mdash;E0077$Reverse&rarr; V0026 // V0010 &mdash;E0289&rarr; V0026 // V0047 &mdash;E0091$Reverse&rarr; V0026 // V0022 &mdash;E0121&rarr; V0026 // V0062 &mdash;E0293&rarr; V0026 // V0063 &mdash;E0123$Reverse&rarr; V0026 // V0006 &mdash;E0021&rarr; V0026 // V0012 &mdash;E0067&rarr; V0026 // V0035 &mdash;E0265&rarr; V0026 // V0093 &mdash;E0265$Reverse&rarr; V0026 // V0035 &mdash;E0203$Reverse&rarr; V0026 // V0100 &mdash;E0253$Reverse&rarr; V0026 // V0051 &mdash;E0315$Reverse&rarr; V0026 // V0090 &mdash;E0291$Reverse&rarr; V0026 // V0042 &mdash;E0169&rarr; V0026 // V0086 &mdash;E0169$Reverse&rarr; V0026 // V0042 &mdash;E0311$Reverse&rarr; V0026 // V0066 &mdash;E0129$Reverse&rarr; V0026 // V0018 &mdash;E0189&rarr; V0026 // V0096 &mdash;E0399$Reverse&rarr; V0026 // V0081 &mdash;E0375$Reverse&rarr; V0026 // V0024 &mdash;E0363$Reverse&rarr; V0026 // V0073 &mdash;E0395$Reverse&rarr; V0026 // V0004 &mdash;E0141&rarr; V0072]</P>
+<P><b>CAMI PRACTICA:</b> [V0026 &mdash;E0065&rarr; V0026 // V0034 &mdash;E0179&rarr; V0026 // V0091 &mdash;E0179$Reverse&rarr; V0026 // V0034 &mdash;E0065$Reverse&rarr; V0026 &mdash;E0165&rarr; V0026 // V0084 &mdash;E0173&rarr; V0026 // V0088 &mdash;E0347&rarr; V0026 // V0030 &mdash;E0247$Reverse&rarr; V0026 // V0055 &mdash;E0107$Reverse&rarr; V0026 // V0050 &mdash;E0227$Reverse&rarr; V0026 // V0070 &mdash;E0137$Reverse&rarr; V0026 // V0025 &mdash;E0137&rarr; V0026 // V0070 &mdash;E0227&rarr; V0026 // V0050 &mdash;E0369$Reverse&rarr; V0026 // V0011 &mdash;E0019$Reverse&rarr; V0026 // V0008 &mdash;E0095&rarr; V0026 // V0049 &mdash;E0095$Reverse&rarr; V0026 // V0008 &mdash;E0017&rarr; V0026 // V0010 &mdash;E0289&rarr; V0026 // V0047 &mdash;E0289$Reverse&rarr; V0026 // V0010 &mdash;E0077&rarr; V0026 // V0040 &mdash;E0175&rarr; V0026 // V0089 &mdash;E0175$Reverse&rarr; V0026 // V0040 &mdash;E0275$Reverse&rarr; V0026 // V0036 &mdash;E0069$Reverse&rarr; V0026 // V0002 &mdash;E0127&rarr; V0026 // V0065 &mdash;E0297$Reverse&rarr; V0026 // V0021 &mdash;E0387&rarr; V0026 // V0079 &mdash;E0155$Reverse&rarr; V0026 // V0056 &mdash;E0303$Reverse&rarr; V0026 // V0048 &mdash;E0093$Reverse&rarr; V0026 // V0031 &mdash;E0365$Reverse&rarr; V0026 // V0062 &mdash;E0293&rarr; V0026 // V0063 &mdash;E0123$Reverse&rarr; V0026 // V0006 &mdash;E0021&rarr; V0026 // V0012 &mdash;E0067&rarr; V0026 // V0035 &mdash;E0265&rarr; V0026 // V0093 &mdash;E0265$Reverse&rarr; V0026 // V0035 &mdash;E0203$Reverse&rarr; V0026 // V0100 &mdash;E0253$Reverse&rarr; V0026 // V0051 &mdash;E0315$Reverse&rarr; V0026 // V0090 &mdash;E0291$Reverse&rarr; V0026 // V0042 &mdash;E0169&rarr; V0026 // V0086 &mdash;E0169$Reverse&rarr; V0026 // V0042 &mdash;E0311$Reverse&rarr; V0026 // V0066 &mdash;E0129$Reverse&rarr; V0026 // V0018 &mdash;E0189&rarr; V0026 // V0096 &mdash;E0399$Reverse&rarr; V0026 // V0081 &mdash;E0375$Reverse&rarr; V0026 // V0024 &mdash;E0363$Reverse&rarr; V0026 // V0073 &mdash;E0395$Reverse&rarr; V0026 // V0004 &mdash;E0141&rarr; V0072]</P>
+
+<b style="color: red; ">Falla amb 1 errors</b>
+<ul>
+<li>Camí massa llarg
+<dd>
+Camí masa llarg ( longitud correcte 296716, longitud camin pràctica 303924)
+</dd>
+</ul><br></div>
+</div>
+<div class="pieDePagina">
+<div class="izquierda">
+<h3>Demanat per:</h3>
+<ul>
+<li>1603611 SÁNCHEZ PIN, Moisés Moises.SanchezP@autonoma.cat</li>
+</ul>
+</div>
+<div class="derecha">
+<h3>Autors:</h3>
+<ul>
+<li>1603611 SÁNCHEZ PIN, Moisés Moises.SanchezP@autonoma.cat</li>
+</ul>
+</div>
+</div>
+</body>
+</html>
