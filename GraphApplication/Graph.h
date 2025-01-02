@@ -474,6 +474,7 @@ public:
 		m_pGraph = pGraph;
 		m_Edges = Edges;
 	}
+	CTrack() : m_pGraph(nullptr) {} // Add this default constructor
 	void SetGraph(CGraph* pGraph) {
 		Clear();
 		m_pGraph = pGraph;
