@@ -221,6 +221,7 @@
     <ClInclude Include="GraphApplication.h" />
     <ClInclude Include="GraphApplicationDlg.h" />
     <ClInclude Include="Logs.h" />
+    <ClInclude Include="Matrix.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="targetver.h" />
